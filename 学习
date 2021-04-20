@@ -34,9 +34,9 @@
      <!Doctype html>放在html上面
 
 4.19(9)(10)目前字符集都用UTF-8
-     确定字符集<head><meta charset="utf-8">charset是字符集 meta是自结束标签
+     确定字符集<head><meta charset="utf-8">charset是字符集 meta是自结束标签用来设置网页的元数据，避免乱码（原本的数据
 
-
+4.20(11)<title>搜索引擎主要根据title中的内容来判断网页主要内容
 
 
 
