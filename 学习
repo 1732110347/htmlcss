@@ -54,3 +54,17 @@
       &lt;小于号
       &copy;版权符号
 
+4.24(15)meta主要用于设置网页的元数据,元数据不是给用户看的
+      charset 指定网页的字符集
+      name 指定数据的名称
+      content 指定的数据内容
+      <meta name ="keywords" content="HTML5"> name指名字，content是数据
+      description用于指定网页站的描述(网页介绍)
+      keywords搜索关键词
+      title内容作为搜索结果的超链接上的文字显示
+      <meta http-equiv="refresh"content="3;url=https://www.baidu.com">  跳转到百度
+
+
+
+
+
