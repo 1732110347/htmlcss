@@ -25,6 +25,7 @@
 
 4.17(7)属性在标签中（开始标签或自动结束标签）还可以检查设置属性，属性是一个名值对（x（名字）=y（值））
     <foont color="red"></foont>color属性名，red属性值
+
     属性只是设置标签值中的内容如何显示
     属性和标签名或其他属性用空格隔开
     属性不能乱写，应按规定，有的属性由属性值有的没有，有的要加引号
@@ -57,13 +58,27 @@
 4.24(15)meta主要用于设置网页的元数据,元数据不是给用户看的
       charset 指定网页的字符集
       name 指定数据的名称
-      content 指定的数据内容
-      <meta name ="keywords" content="HTML5"> name指名字，content是数据
+      content 指定的数据内容     
       description用于指定网页站的描述(网页介绍)
+      <meta name="description" content="京东JD.COM-专业的综合网上购物商城,销售家电、数码通讯、电脑、家居百货、服装服饰、母婴、图书、食品等数万个品牌优质商品.便捷、诚信的服务，为您提供愉悦的网上购物体验!">
+      <meta name ="keywords" content="HTML5"> name指名字，content是数据
       keywords搜索关键词
       title内容作为搜索结果的超链接上的文字显示
       <meta http-equiv="refresh"content="3;url=https://www.baidu.com">  跳转到百度
 
+4.25(16)块元素(block element) h1
+      在网页中一般通过块元素来对页面进行布局
+      一般情况下会在块元素中放行内元素，而不在行内放块
+      块元素基本什么都能放
+      p元素中不能放任何块元素
+
+        行内元素(inline element) em
+        用来包裹文字
+        浏览器在解析网页时会自动修正
+        标签写在了根元素外面
+        p元素中嵌套了块元素
+        根元素出现了head和body外的子元素
+     
 
 
 
