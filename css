@@ -1,3 +1,15 @@
 5.6(27)css   style样式  color颜色 font-size大小
-     第一种 (内联样式，行内样式)在标签内部通过style属性来设置元素的样式
+     第一种 (内联样式，行内样式)在标签内部通过style属性来设置元素的样式 只能对一个标签有用
      style="color:xxx;font-size:xxpx;"
+
+5.7(28)css编写的位置
+      第二种 （内部样式）将样式编写到head中的style标签里
+      <style> p{color:xx;font-size:xx}   </style>   p表示所有p标签
+
+      第三种(外部样式)
+      在网页外设置一个css文件 需要link标签进行引用
+      <link rel="stylesheet“href=""> stylesheet样式表
+    
+    (29)基本语法
+    p选择器 {}声明块
+            
