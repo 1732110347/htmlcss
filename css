@@ -131,16 +131,39 @@
 
        不在
 
-       (45)盒子模型
+5.9   (45)盒子模型
        将页面中所有元素设置为盒子，对页面的布局为盒子的摆放
        内容区content  元素种所有子元素和文本内容都在内容区中排列
        width设置内容区的宽度 height 高度
 
-       边框border 宽度border-width 颜色border-color 样式border-style
-       solid 实线 
-       内边距padding 
+      (46)边框border 
+      宽度border-width 颜色border-color 样式border-style
+       写4个的时候是顺时针 border-top单上 
+      solid 实线  dotted点状虚线 dashed虚线 aouble 双线
+      简写 border:solid xxpx color;
+      单边框 border-top:xxx
 
-       外边距margin
+      (47)内边距padding 
+      会影响盒子大小 和border语法差不多
+
+      (48) 外边距margin
+      不会影响可见框 影响盒子实际占地
+      左和上移动自己 右和下移动别人
+      可以设置负值向反方向走
+
+      (48)水平方向布局
+      元素在其父元素中水平方向的位置由以下几个属性共同决定
+      margin-left  border-left  padding-left  width  padding-right border-right  margin-right
+      一个元素在其父元素中必须满足
+      margin-left  border-left  padding-left  width  padding-right border-right  margin-right=父元素width
+      如果不成立会自动补到margin-right 
+      有三个值可以自动auto with margin-left margin-right
+      如果某个值为auto，则会自动调整为auto使等式成立
+      如果一个宽度和外边距设置为auto，则宽度到最大
+      如果三个都auto则，则外边距都是0，宽度最大
+      如果两外边距auto，则设置相同
+      利用这个特点可以使元素居中
+
        
 
 
