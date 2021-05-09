@@ -201,6 +201,11 @@
       hidden 元素在页面隐藏 不显示 但是依然占位
 
       (53)浏览器的默认样式
+      通常情况下要去掉浏览器的默认样式
+      body{margin:0px}
+      p{margin:0px}
+      *{margin:0;padding:0}
+      
      
 
 
