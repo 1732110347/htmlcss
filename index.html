@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,12 +9,13 @@
         /*  */
     </style>
     <style>
-        div ~span{
-            color:red
+        div~span {
+            color: red
         }
     </style>
 </head>
 <link rel="stylesheet" href="1.css">
+
 <body>
     <div>
         <div>
@@ -33,30 +35,31 @@
             dsadassssssssssssssssssssss
         </div>
     </div>
-     <blockquote>32
-ada
+    <blockquote>32
+        ada
 
 
-        </blockquote>
-<b>
-    das
-</b>
-<img src="" alt="">
-<audio src=""></audio>
-<video src=""></video>
-<embed src="" type="">
-<a href="index2.html" target="_blank">超链接</a>
+    </blockquote>
+    <b>
+        das
+    </b>
+    <img src="" alt="">
+    <audio src=""></audio>
+    <video src=""></video>
+    <embed src="" type="">
+    <a href="index2.html" target="_blank">超链接</a>
     <a href="index2.html">chakan</a>
-   
-    <audio src=""controls></audio>
-    <iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=a003409mshf" allowFullScreen="true"></iframe>
 
-<link rel="stylesheet" href="">
-<a href="#sd">回去</a>
-<a href="#bottom">底部</a>
+    <audio src="" controls></audio>
+    <iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=a003409mshf"
+        allowFullScreen="true"></iframe>
+
+    <link rel="stylesheet" href="">
+    <a href="#sd">回去</a>
+    <a href="#bottom">底部</a>
     <div style="color:red;font-size:3px;">CSDN首页
-   
-       
+
+
         3
         13返回对象中的一个随机元素。
         random.choices()
@@ -66,10 +69,10 @@ ada
         >>> choice(['win', 'lose', 'draw'])
         'draw'
         1
-        <a id="sd" ></a>
-        
-            print(str(i),end='')
-            value=round(counter[str(i)]/100.)
+        <a id="sd"></a>
+
+        print(str(i),end='')
+        value=round(counter[str(i)]/100.)
         ————————————————
         版权声明：本文为CSDN博主「超级大黄狗Shawn」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
         原文链接：https://blog.csdn.net/weixin_41084236/article/details/81457949
@@ -103,188 +106,190 @@ ada
         [3, 3, 2, 3, 2]
         >>> random.sample([1,2,3,4],k=5)
         Traceback (most recent call last):
-          File "<pyshell#5>", line 1, in <module>
-            random.sample([1,2,3,4],k=5)
-          File "F:\python\lib\random.py", line 321, in sample
-            raise ValueError("Sample larger than population or is negative")
-        ValueError: Sample larger than population or is negative
-        >>> 
-        1
-        2
-        3
-        4
-        5
-        6
-        7
-        8
-        9
-        10
-        11
-        12
-        13
-        14
-        15
-        random.shuffle()
-        random.shuffle(x[, random])
-        1
-        打乱序列
-        >>> deck = 'ace two three four'.split()
-        >>> shuffle(deck)
-        >>> deck
-        ['four', 'two', 'ace', 'three']
-        1
-        2
-        3
-        4
-        不同的分布模式
-        random.triangular(low, high, mode)
-        https://en.wikipedia.org/wiki/Triangular_distribution
-        random.betavariate(alpha, beta)
-        https://en.wikipedia.org/wiki/Beta_distribution
-        random.expovariate(lambd)
-        https://en.wikipedia.org/wiki/Exponential_distribution
-        random.gammavariate(alpha, beta)
-        https://en.wikipedia.org/wiki/Gamma_distribution
-        random.gauss(mu, sigma)
-        https://en.wikipedia.org/wiki/Normal_distribution
-        random.lognormvariate(mu, sigma)
-        https://en.wikipedia.org/wiki/Log-normal_distribution
-        random.normalvariate(mu, sigma)
-        https://en.wikipedia.org/wiki/Normal_distribution
-        random.vonmisesvariate(mu, kappa)
-        https://en.wikipedia.org/wiki/Von_Mises_distribution
-        random.paretovariate(alpha)
-        https://en.wikipedia.org/wiki/Pareto_distribution
-        random.weibullvariate(alpha, beta)
-        https://en.wikipedia.org/wiki/Weibull_distribution
-        
-        random.triangular(low, high, mode)
-        以三角分布的概率分布返回随机数。
-  
-        import random
-        import collections
-        counter=collections.Counter() # 方便偷懒，用Counter统计次数。
-        for i in range(10000):
-            step=str(round(random.triangular(0,9,7)))
-            counter.update(step)
-        
-        print(counter)
-        
-        for i in range(10):
-            print(str(i),end='')
-            value=round(counter[str(i)]/100.)
-            for j in range(value):
-                print('*',end='')
-            print('')
-        
-        ================= RESTART: F:\PyWorkspace\blank.py =================
-        Counter({'7': 1963, '6': 1946, '5': 1617, '4': 1264, '8': 1105, '3': 944, '2': 668, '1': 323, '9': 138, '0': 32})
-        0
-        1***
-        2*******
-        3*********
-        4*************
-        5****************
-        6*******************
-        7********************
-        8***********
-        9*
-        1
-        2
-        3
-        4
-        5
-        6
-        7
-        8
-        9
-        10
-        11
-        12
-        13
-        14
-        15
-        16
-        17
-        18
-        19
-        20
-        21
-        22
-        23
-        24
-        25
-        26
-        27
-        28
-        29
-        random.betavariate(alpha, beta)
-        以beta分布的概率分布返回0到1之间的随机数。
-        
-        import random
-        import collections
-        counter=collections.Counter()
-        for i in range(10000):
-            step=str(round(random.betavariate(2,5)*10))
-            counter.update(step)
-        
-        print(counter)
-        
-        for i in range(10):
-            print(str(i),end='')
-            value=round(counter[str(i)]/100.)
-        ————————————————
-        版权声明：本文为CSDN博主「超级大黄狗Shawn」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
-        原文链接：https://blog.csdn.net/weixin_41084236/article/details/81457949
-        1
-        31
-        4
-        1
-        2
-        13
-        3
-        1
+        File "<pyshell#5>", line 1, in <module>
+                random.sample([1,2,3,4],k=5)
+                File "F:\python\lib\random.py", line 321, in sample
+                raise ValueError("Sample larger than population or is negative")
+                ValueError: Sample larger than population or is negative
+                >>>
+                1
+                2
+                3
+                4
+                5
+                6
+                7
+                8
+                9
+                10
+                11
+                12
+                13
+                14
+                15
+                random.shuffle()
+                random.shuffle(x[, random])
+                1
+                打乱序列
+                >>> deck = 'ace two three four'.split()
+                >>> shuffle(deck)
+                >>> deck
+                ['four', 'two', 'ace', 'three']
+                1
+                2
+                3
+                4
+                不同的分布模式
+                random.triangular(low, high, mode)
+                https://en.wikipedia.org/wiki/Triangular_distribution
+                random.betavariate(alpha, beta)
+                https://en.wikipedia.org/wiki/Beta_distribution
+                random.expovariate(lambd)
+                https://en.wikipedia.org/wiki/Exponential_distribution
+                random.gammavariate(alpha, beta)
+                https://en.wikipedia.org/wiki/Gamma_distribution
+                random.gauss(mu, sigma)
+                https://en.wikipedia.org/wiki/Normal_distribution
+                random.lognormvariate(mu, sigma)
+                https://en.wikipedia.org/wiki/Log-normal_distribution
+                random.normalvariate(mu, sigma)
+                https://en.wikipedia.org/wiki/Normal_distribution
+                random.vonmisesvariate(mu, kappa)
+                https://en.wikipedia.org/wiki/Von_Mises_distribution
+                random.paretovariate(alpha)
+                https://en.wikipedia.org/wiki/Pareto_distribution
+                random.weibullvariate(alpha, beta)
+                https://en.wikipedia.org/wiki/Weibull_distribution
 
-        11
-      
-        random.setstate()
-        random.getrandbits()
-        random.random()
-        random.uniform()
-        random.randrange()
-        random.randint()
-        random.choice()
-        random.choices()
-        random.sample()
-        random.shuffle()
-        不同的分布模式
-        
-        此内容解决你搜索的问题？
-        否
-        是
-      
-        random.setstate()
-        random.getrandbits()
-        random.random()
-        random.uniform()
-        random.randrange()
-        random.randint()
-        random.choice()
-        random.choices()
-        random.sample()
-        random.shuffle()
-        不同的分布模式
-        
-        此内容解决你搜索的问题？
-        否
-        是
-        
-        
-        举报
-          </div>
-         <p>
-             dsadsadadadda
-         </p>
-          <a class="bottom" ></a>
+                random.triangular(low, high, mode)
+                以三角分布的概率分布返回随机数。
+
+                import random
+                import collections
+                counter=collections.Counter() # 方便偷懒，用Counter统计次数。
+                for i in range(10000):
+                step=str(round(random.triangular(0,9,7)))
+                counter.update(step)
+
+                print(counter)
+
+                for i in range(10):
+                print(str(i),end='')
+                value=round(counter[str(i)]/100.)
+                for j in range(value):
+                print('*',end='')
+                print('')
+
+                ================= RESTART: F:\PyWorkspace\blank.py =================
+                Counter({'7': 1963, '6': 1946, '5': 1617, '4': 1264, '8': 1105, '3': 944, '2': 668, '1': 323, '9': 138,
+                '0': 32})
+                0
+                1***
+                2*******
+                3*********
+                4*************
+                5****************
+                6*******************
+                7********************
+                8***********
+                9*
+                1
+                2
+                3
+                4
+                5
+                6
+                7
+                8
+                9
+                10
+                11
+                12
+                13
+                14
+                15
+                16
+                17
+                18
+                19
+                20
+                21
+                22
+                23
+                24
+                25
+                26
+                27
+                28
+                29
+                random.betavariate(alpha, beta)
+                以beta分布的概率分布返回0到1之间的随机数。
+
+                import random
+                import collections
+                counter=collections.Counter()
+                for i in range(10000):
+                step=str(round(random.betavariate(2,5)*10))
+                counter.update(step)
+
+                print(counter)
+
+                for i in range(10):
+                print(str(i),end='')
+                value=round(counter[str(i)]/100.)
+                ————————————————
+                版权声明：本文为CSDN博主「超级大黄狗Shawn」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+                原文链接：https://blog.csdn.net/weixin_41084236/article/details/81457949
+                1
+                31
+                4
+                1
+                2
+                13
+                3
+                1
+
+                11
+
+                random.setstate()
+                random.getrandbits()
+                random.random()
+                random.uniform()
+                random.randrange()
+                random.randint()
+                random.choice()
+                random.choices()
+                random.sample()
+                random.shuffle()
+                不同的分布模式
+
+                此内容解决你搜索的问题？
+                否
+                是
+
+                random.setstate()
+                random.getrandbits()
+                random.random()
+                random.uniform()
+                random.randrange()
+                random.randint()
+                random.choice()
+                random.choices()
+                random.sample()
+                random.shuffle()
+                不同的分布模式
+
+                此内容解决你搜索的问题？
+                否
+                是
+
+
+                举报
+    </div>
+    <p>
+        dsadsadadadda
+    </p>
+    <a class="bottom"></a>
 </body>
+
 </html>

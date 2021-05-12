@@ -1,1044 +1,944 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <a href="index2.html">s</a>
-<p>CSDN首页
-    首页
-    博客
-    程序员学院
-    下载
-    论坛
-    问答
-    代码
-    直播
-    能力认证
-    高校
-    random
-     
-    登录/注册
-    会员中心
-    收藏
-    消息
-    创作中心
-    随机数：Python3.7的random模块详解
-    
-    超级大黄狗Shawn 2018-08-06 17:38:15  10917  收藏 111
-    文章标签： Python
-    版权
-    随机数模块random
-    作者:Shawn
-    python3.7
-    手册
-    https://docs.python.org/3/library/random.html#module-random
-    部分图片转自wiki
-    
-    随机数模块random
-    常用函数
-    random.seed()
-    random.getstate()
-    random.setstate()
-    random.getrandbits()
-    random.random()
-    random.uniform()
-    random.randrange()
-    random.randint()
-    random.choice()
-    random.choices()
-    random.sample()
-    random.shuffle()
-    不同的分布模式
-    常用函数
-    random.seed()
-    random.seed(a=None, version=2)
-    1
-    设置随机种子 ，用于同步不同运行环境的随机数。
-    random.getstate()
-    random.getstate()
-    1
-    获得当前状态，用于恢复状态
-    random.setstate()
-    random.setstate(state)
-    1
-    恢复状态
-    >>> import random
-    >>> s=random.getstate()
-    >>> random.random()
-    0.15441857485858956
-    >>> random.random()
-    0.6330314601528841
-    >>> random.setstate(s)
-    >>> random.random()
-    0.15441857485858956
-    >>> random.random()
-    0.6330314601528841
-    >>> random.random()
-    0.04725013105129261
-    1
-    2
-    3
-    4
-    5
-    6
-    7
-    8
-    9
-    10
-    11
-    12
-    13
-    random.getrandbits()
-    random.getrandbits(k)
-    1
-    生成占内存k位以内的随机整数，硬核秃头专属。
-    >>> import random
-    >>> random.getrandbits(10)
-    674
-    >>> random.getrandbits(10)
-    10
-    >>> random.getrandbits(10)
-    745
-    >>> random.getrandbits(10)
-    560
-    >>> random.getrandbits(10)
-    162
-    1
-    2
-    3
-    4
-    5
-    6
-    7
-    8
-    9
-    10
-    11
-    random.random()
-    random.random()
-    1
-    随机产生一个[0,1.)数字。
-    >>> random() 
-    0.37444887175646646
-    1
-    2
-    random.uniform()
-    random.uniform(a, b)
-    1
-    产生一个a、b区间的随机数。
-    >>> uniform(2.5, 10.0)
-    3.1800146073117523
-    1
-    2
-    random.randrange()
-    random.randrange(start, stop[, step])
-    1
-    整数随机。
-    功能等同于choice(range(start, stop, step))。
-    >>> randrange(10)                        # 0到9随机
-    7
-    >>> randrange(0, 101, 2)                 # 0到100随机偶数
-    26
-    1
-    2
-    3
-    4
-    random.randint()
-    random.randint(a, b)
-    1
-    返回一个[a,b]的随机整数。
-    功能等同于randrange(a, b+1)。
-    random.choice()
-    random.choice(seq)
-    1
-    返回对象中的一个随机元素。
-    random.choices()
-    random.choices(population, weights=None, *, cum_weights=None, k=1)
-    1
-    随机选择，是random.choice(seq)的升级版本。
-    >>> choice(['win', 'lose', 'draw'])
-    'draw'
-    1
-    2
-    random.sample()
-    random.sample(population, k)
-    1
-    随机取样
-    >>> sample([10, 20, 30, 40, 50], k=4)
-    [40, 10, 50, 30]
-    1
-    2
-    choices与sample的区别：
-    choices在抽取随机元素时是包含重复元素的，即：一个元素可能会被抽取多次。
-    反之，在sample中，抽取的元素是不重复的。
-    所以，在抽取元素大于样本集总数时，choices会继续而sample会报错：
-    >>> import random
-    >>> random.choices([1,2,3,4],k=4)
-    [4, 3, 4, 4]
-    >>> random.sample([1,2,3,4],k=4)
-    [3, 1, 2, 4]
-    >>> random.choices([1,2,3,4],k=5)
-    [3, 3, 2, 3, 2]
-    >>> random.sample([1,2,3,4],k=5)
-    Traceback (most recent call last):
-      File "<pyshell#5>", line 1, in <module>
-        random.sample([1,2,3,4],k=5)
-      File "F:\python\lib\random.py", line 321, in sample
-        raise ValueError("Sample larger than population or is negative")
-    ValueError: Sample larger than population or is negative
-    >>> 
-    1
-    2
-    3
-    4
-    5
-    6
-    7
-    8
-    9
-    10
-    11
-    12
-    13
-    14
-    15
-    random.shuffle()
-    random.shuffle(x[, random])
-    1
-    打乱序列
-    >>> deck = 'ace two three four'.split()
-    >>> shuffle(deck)
-    >>> deck
-    ['four', 'two', 'ace', 'three']
-    1
-    2
-    3
-    4
-    不同的分布模式
-    random.triangular(low, high, mode)
-    https://en.wikipedia.org/wiki/Triangular_distribution
-    random.betavariate(alpha, beta)
-    https://en.wikipedia.org/wiki/Beta_distribution
-    random.expovariate(lambd)
-    https://en.wikipedia.org/wiki/Exponential_distribution
-    random.gammavariate(alpha, beta)
-    https://en.wikipedia.org/wiki/Gamma_distribution
-    random.gauss(mu, sigma)
-    https://en.wikipedia.org/wiki/Normal_distribution
-    random.lognormvariate(mu, sigma)
-    https://en.wikipedia.org/wiki/Log-normal_distribution
-    random.normalvariate(mu, sigma)
-    https://en.wikipedia.org/wiki/Normal_distribution
-    random.vonmisesvariate(mu, kappa)
-    https://en.wikipedia.org/wiki/Von_Mises_distribution
-    random.paretovariate(alpha)
-    https://en.wikipedia.org/wiki/Pareto_distribution
-    random.weibullvariate(alpha, beta)
-    https://en.wikipedia.org/wiki/Weibull_distribution
-    
-    random.triangular(low, high, mode)
-    以三角分布的概率分布返回随机数。
-    三角分布
-    import random
-    import collections
-    counter=collections.Counter() # 方便偷懒，用Counter统计次数。
-    for i in range(10000):
-        step=str(round(random.triangular(0,9,7)))
-        counter.update(step)
-    
-    print(counter)
-    
-    for i in range(10):
-        print(str(i),end='')
-        value=round(counter[str(i)]/100.)
-        for j in range(value):
-            print('*',end='')
-        print('')
-    
-    ================= RESTART: F:\PyWorkspace\blank.py =================
-    Counter({'7': 1963, '6': 1946, '5': 1617, '4': 1264, '8': 1105, '3': 944, '2': 668, '1': 323, '9': 138, '0': 32})
-    0
-    1***
-    2*******
-    3*********
-    4*************
-    5****************
-    6*******************
-    7********************
-    8***********
-    9*
-    1
-    2
-    3
-    4
-    5
-    6
-    7
-    8
-    9
-    10
-    11
-    12
-    13
-    14
-    15
-    16
-    17
-    18
-    19
-    20
-    21
-    22
-    23
-    24
-    25
-    26
-    27
-    28
-    29
-    random.betavariate(alpha, beta)
-    以beta分布的概率分布返回0到1之间的随机数。
-    beta分布
-    import random
-    import collections
-    counter=collections.Counter()
-    for i in range(10000):
-        step=str(round(random.betavariate(2,5)*10))
-        counter.update(step)
-    
-    print(counter)
-    
-    for i in range(10):
-        print(str(i),end='')
-        value=round(counter[str(i)]/100.)
-        for j in range(value):
-            print('*',end='')
-        print('')
-    
-    
-    Counter({'2': 2424, '3': 2173, '1': 1941, '4': 1512, '5': 1000, '6': 416, '0': 316, '7': 167, '8': 48, '9': 3})
-    0***
-    1*******************
-    2************************
-    3**********************
-    4***************
-    5**********
-    6****
-    7**
-    8
-    9
-    1
-    2
-    3
-    4
-    5
-    6
-    7
-    8
-    9
-    10
-    11
-    12
-    13
-    14
-    15
-    16
-    17
-    18
-    19
-    20
-    21
-    22
-    23
-    24
-    25
-    26
-    27
-    28
-    29
-    random.expovariate(lambd)
-    以指数分布的概率分布返回随机数。
-    指数分布
-    
-    import random
-    import collections
-    counter=collections.Counter()
-    for i in range(10000):
-        step=str(round(random.expovariate(1)))
-        counter.update(step)
-    
-    print(counter)
-    
-    for i in range(10):
-        print(str(i),end='')
-        value=round(counter[str(i)]/100.)
-        for j in range(value):
-            print('*',end='')
-        print('')
-    
-    
-    ============== RESTART: F:\PyWorkspace\LeetCode\expovariate.py ==============
-    Counter({'0': 3950, '1': 3862, '2': 1403, '3': 484, '4': 192, '5': 73, '6': 18, '7': 12, '8': 4, '9': 2})
-    0****************************************
-    1***************************************
-    2**************
-    3*****
-    4**
-    5*
-    6
-    7
-    8
-    9
-    1
-    2
-    3
-    4
-    5
-    6
-    7
-    8
-    9
-    10
-    11
-    12
-    13
-    14
-    15
-    16
-    17
-    18
-    19
-    20
-    21
-    22
-    23
-    24
-    25
-    26
-    27
-    28
-    29
-    random.gammavariate(alpha, beta)
-    以gamma分布的概率分布返回随机数。
-    gamma分布
-    
-    import random
-    import collections
-    counter=collections.Counter()
-    for i in range(10000):
-        step=str(round(random.gammavariate(9,0.5)))
-        counter.update(step)
-    
-    print(counter)
-    
-    for i in range(10):
-        print(str(i),end='')
-        value=round(counter[str(i)]/100.)
-        for j in range(value):
-            print('*',end='')
-        print('')
-    
-    
-    ============== RESTART: F:\PyWorkspace\LeetCode\gammavariate.py ==============
-    Counter({'4': 2671, '5': 2244, '3': 2054, '6': 1303, '2': 698, '7': 616, '8': 236, '1': 103, '9': 89, '0': 32})
-    0
-    1*
-    2*******
-    3*********************
-    4***************************
-    5**********************
-    6*************
-    7******
-    8**
-    9*
-    1
-    2
-    3
-    4
-    5
-    6
-    7
-    8
-    9
-    10
-    11
-    12
-    13
-    14
-    15
-    16
-    17
-    18
-    19
-    20
-    21
-    22
-    23
-    24
-    25
-    26
-    27
-    28
-    29
-    30
-    random.gauss(mu, sigma)
-    以高斯分布的概率分布返回随机数。
-    高斯分布
-    
-    import random
-    import collections
-    counter=collections.Counter()
-    for i in range(10000):
-        step=str(round(random.gauss(5,1)))
-        counter.update(step)
-    
-    print(counter)
-    
-    for i in range(10):
-        print(str(i),end='')
-        value=round(counter[str(i)]/100.)
-        for j in range(value):
-            print('*',end='')
-        print('')
-    
-    ================= RESTART: F:\PyWorkspace\LeetCode\gauss.py =================
-    Counter({'5': 3803, '4': 2429, '6': 2418, '3': 660, '7': 582, '2': 59, '8': 41, '9': 6, '1': 2})
-    0
-    1
-    2*
-    3*******
-    4************************
-    5**************************************
-    6************************
-    7******
-    8
-    9
-    1
-    2
-    3
-    4
-    5
-    6
-    7
-    8
-    9
-    10
-    11
-    12
-    13
-    14
-    15
-    16
-    17
-    18
-    19
-    20
-    21
-    22
-    23
-    24
-    25
-    26
-    27
-    28
-    random.lognormvariate(mu, sigma)
-    以对数正态分布的概率分布返回随机数。
-    对数正态分布
-    
-    import random
-    import collections
-    counter=collections.Counter()
-    for i in range(10000):
-        step=str(round(random.triangular(5,0.02)))
-        counter.update(step)
-    
-    print(counter)
-    
-    for i in range(10):
-        print(str(i),end='')
-        value=round(counter[str(i)]/100.)
-        for j in range(value):
-            print('*',end='')
-        print('')
-    
-    
-    ============= RESTART: F:\PyWorkspace\LeetCode\lognormvariate.py =============
-    Counter({'3': 3232, '2': 3168, '4': 1626, '1': 1621, '0': 178, '5': 175})
-    0**
-    1****************
-    2********************************
-    3********************************
-    4****************
-    5**
-    6
-    7
-    8
-    9
-    1
-    2
-    3
-    4
-    5
-    6
-    7
-    8
-    9
-    10
-    11
-    12
-    13
-    14
-    15
-    16
-    17
-    18
-    19
-    20
-    21
-    22
-    23
-    24
-    25
-    26
-    27
-    28
-    29
-    30
-    random.normalvariate(mu, sigma)
-    
-    同random.gauss(mu, sigma)
-    random.vonmisesvariate(mu, kappa)
-    
-    以von Mises分布的概率分布返回随机数。
-    又作圆上正态分布
-    von Mises分布
-    
-    import random
-    import collections
-    counter=collections.Counter()
-    for i in range(10000):
-        step=str(round(random.vonmisesvariate(3.14,2)))
-        counter.update(step)
-    
-    print(counter)
-    
-    for i in range(7):
-        print(str(i),end='')
-        value=round(counter[str(i)]/100.)
-        for j in range(value):
-            print('*',end='')
-        print('')
-    
-    
-    ============ RESTART: F:\PyWorkspace\LeetCode\vonmisesvariate.py ============
-    Counter({'3': 4795, '4': 2609, '2': 1732, '5': 437, '1': 296, '6': 87, '0': 44})
-    0
-    1***
-    2*****************
-    3************************************************
-    4**************************
-    5****
-    6*
-    1
-    2
-    3
-    4
-    5
-    6
-    7
-    8
-    9
-    10
-    11
-    12
-    13
-    14
-    15
-    16
-    17
-    18
-    19
-    20
-    21
-    22
-    23
-    24
-    25
-    26
-    random.paretovariate(alpha)
-    以Pareto分布的概率分布返回随机数。
-    Pareto分布
-    
-    import random
-    import collections
-    counter=collections.Counter()
-    for i in range(10000):
-        step=str(round(random.paretovariate(2)))
-        counter.update(step)
-    
-    print(counter)
-    
-    for i in range(10):
-        print(str(i),end='')
-        value=round(counter[str(i)]/100.)
-        for j in range(value):
-            print('*',end='')
-        print('')
-    
-    
-    
-    ============= RESTART: F:\PyWorkspace\LeetCode\paretovariate.py =============
-    Counter({'1': 5644, '2': 2853, '3': 830, '4': 347, '5': 179, '6': 82, '7': 76, '8': 45, '9': 36, '0': 27})
-    0
-    1********************************************************
-    2*****************************
-    3********
-    4***
-    5**
-    6*
-    7*
-    8
-    9
-    1
-    2
-    3
-    4
-    5
-    6
-    7
-    8
-    9
-    10
-    11
-    12
-    13
-    14
-    15
-    16
-    17
-    18
-    19
-    20
-    21
-    22
-    23
-    24
-    25
-    26
-    27
-    28
-    29
-    30
-    random.weibullvariate(alpha, beta)
-    以Weibull分布的概率分布返回随机数。
-    Weibull分布
-    
-    import random
-    import collections
-    counter=collections.Counter()
-    for i in range(10000):
-        step=str(round(random.weibullvariate(1,5)*5))
-        counter.update(step)
-    
-    print(counter)
-    
-    for i in range(10):
-        print(str(i),end='')
-        value=round(counter[str(i)]/100.)
-        for j in range(value):
-            print('*',end='')
-        print('')
-    
-    
-    
-    ============= RESTART: F:\PyWorkspace\LeetCode\weibullvariate.py =============
-    Counter({'5': 3601, '4': 2847, '6': 1753, '3': 1247, '2': 294, '7': 239, '1': 17, '8': 2})
-    0
-    1
-    2***
-    3************
-    4****************************
-    5************************************
-    6******************
-    7**
-    8
-    9
-    1
-    2
-    3
-    4
-    5
-    6
-    7
-    8
-    9
-    10
-    11
-    12
-    13
-    14
-    15
-    16
-    17
-    18
-    19
-    20
-    21
-    22
-    23
-    24
-    25
-    26
-    27
-    28
-    29
-    30
-    
-    点赞
-    20
-    
-    评论
-    3
-    
-    分享
-    
-    收藏
-    111
-    
-    打赏
-    
-    举报
-    关注
-    一键三连
-    
-    java Random类
-    weibaq的专栏
-     2922
-    Random类 (java.util)          Random类中实现的随机算法是伪随机，也就是有规则的随机。在进行随机时，随机算法的起源数字称为种子数(seed)，在种子数的基础上进行一定的变换，从而产生需要的随机数字。相同种子数的Random对象，相同次数生成的随机数字是完全相同的。也就是说，两个种子数相同的Random对象，第一次生成的随机数字完全相同，第二次生成的随机数字也
-    python random函数
-    Dou
-     9372
-    调用random前要import random模块。 测试： 1、random.random() : 生成一个随机的浮点数，在0 ~ 1之间 2、random.sample() : 从指定的序列或列表中， 随机的截取指定长度的片段。 测试1(序列)： 测试2（列表）： 3、random.randint() : 随机生成一个int类型的数，可以指...
-    
-    优质评论可以帮助作者获得更高权重
-    表情包
-    m0_45344066
-    m0_45344066:业界良心2 年前回复
-    点赞
-    weixin_43914993
-    YM_moon:文章不错呀，怎么才能收藏2 年前回复
-    点赞
-    Zack_Zheng
-    刘备同学:厉害了2 年前回复
-    点赞
-    相关推荐
-    Random用法详解_xxx_1_1的博客
-    3-30
-    第一种实现使用Random类中的nextInt(int n)方法直接实现。 第二种实现中,首先调用nextInt()方法生成一个任意的int数字,该数字和10取余以后生成的数字区间为(-10,10),然后再对该区间求绝对值,则得到的区间就是[0,10)了。
-    Random_大白的成长之路
-    4-24
-    Random位于java.util包下,可以产生随机数。 importjava.util.Random;publicclassRandomText{publicstaticvoidmain(String[]args){//创建随机数对象Random random=newRandom();//随机产生一个int类型取值范围内的数字。intnum=random.nextInt...
-    Python之random详解（新手必看）
-    qq_42849332的博客
-     1万+
-    前言：为了总结一下random模块的使用方法，我翻看了CSDN中几乎所有的关于random的介绍，发现其实都差不多。不过我还是选择自己再写一遍，一来加深印象，二来增加一些新的内容。 1.****random.random 随机生成[0.1)的浮点数 import random print(random.random()) #运行结果：0.4041810247152263 ...
-    python之random库使用
-    jinsefm的博客
-     5999
-    python之random库random概述伪随机数：采用梅森旋转算法生成的（伪）随机序列中元素random库主要用于生成随机数使用random库：import random基本随机数函数seed(),random()扩展随机数函数randint(),getrandbits(),uniform(),randrange(),choice(),shuffele()函数描述seed(a=None)初始化...
-    Random_老猫咪的春天的博客
-    4-23
-    Random类实现的Random使用protected实用程序方法,每次调用可以提供多达32个伪随机生成位。 许多应用程序会发现方法Math.random()使用起来更简单。 java.util.Random的java.util.Random是线程安全的。 但是,跨线程的同时使用java. util.Random...
-    JAVA中的Random()_霓虹深处_java random
-    3-30
-    调用这个Math.Random()函数能够返回带正号的double值,该值大于等于0.0且小于1.0,即取值范围是[0.0,1.0)的左闭右开区间,返回值是一个伪随机选择的数,在该范围内(近似)均匀分布。例子如下: ...
-    numpy.random用法
-    weixin_42029738的博客
-     5万+
-    最近发现numpy的random用法有很多，不注意很容易混淆，今天参考几个博客内容整理了一下。 numpy.random.randint low、high、size三个参数。默认high是None,如果只有low，那范围就是[0,low)。如果有high，范围就是[low,high)。 &gt;&gt;&gt; np.random.randint(2, size=10) array([1, ...
-    verilog中系统任务函数$random的使用
-    CLL_caicai的博客
-     1442
-    一、使用 $random可以产生一个有符号的32bit随机整数，一般的用法为： 1、产生随机整数： num = $random%b 其中，b为十进制整数； 则num为范围在 -（b-1）:(b-1) 中的随机数 2、产生随机正整数： num = {$random}%b 其中，b为十进制整数； 则num为范围在 0:(b-1) 中的随机数 二、仿真 产生20次-100~100的随机数；随后产生20次0-100的随机数： module random_tsb( ); re
-    random_weixin_34174132的博客
-    1-27
-    一. 简介 ramdom模块提供了一个随机数的函数:random() 它可以返回一个随机生成的实数,范围在[0,1)范围内。需要注意的是random()是不能直接访问的,需要导入模块random才可以使用。二. 使用 1 import random 2 3 # 第一个随机数...
-    Python3 中 random模块
-    angjijing7393的博客
-     95
-    Python中的random模块用于生成随机数。 下面具体介绍random模块的功能： 1.random.random() #用于生成一个0到1的 随机浮点数：0<= n < 1.0 1 import random 2 a = random.random() 3 print (a) 2.random.uniform(a,b) #...
-    Python3 random库函数
-    清晨Jerusha
-     736
-    random库是产生随机数的python标准库，包括基本随机数函数和扩展随机数函数。1、基本随机数函数有：1）seed(a=None),初始化给定的随机种子，默认为当前系统时间。通过seed()函数生成的随机数是假的随机数，也成为稳定随机数，是指返回的随机数是一个稳定算法所得出的稳定结果序列，若种子相同，后续所有的随机数都一样。2）random()生成一个[0.0,1.0)之间的随机小数impor...
-    Python中random.random()和random.Random()的区别是什么?
-    Python美丽星球--微信(Felixzfb)
-     1万+
-    Python是完全面向对象的，因此所有的数据都是对象 random.random()生成0和1之间的随机浮点数float，它其实是一个隐藏的random.Random类的实例的random方法。 random.Random() 生成random模块里得Random类的一个实例，这个实例不会和其他Random实例共享状态，一般是在多线程的情况下使用。 random.random()生成0和1之间的随...
-    python3-random模块详解
-    liulanba的博客
-     442
-    python3的random模块用于生成随机数，字符串等。 1.random.random() 生成一个随机小数，范围在[0,1) import random t=random.random() print(t) # 0.2635740247512115 2.random.int(min,max) 生成[min,max]的整数型随机数 import random t=random.randint(1,10) print(t) #10 3.random.uniform(min,max) 生成一个
-    random()
-    仅做个人笔记
-     2177
-    java中存在两个随机函数，它们分别来自 java.long.Math.random() 和 java.util.Random()其中前者的适用范围比较小，完全可以被后者取代。 java.lang.Math.random() public static double random(); 此方法是一个无参，double类型返回值的公开静态方法。 返回一个大于0的double类...
-    Random
-    yy1711408814的博客
-     81
-    package com.newedu.jb.day16.api;import java.util.Random;/** * Random的类的常用方法演示 *  * 概述： *    产生伪随机数。 *  * 构造方法： * Random()：无参的构造，创建一个新的随机数生成器。 *       默认使用当前的系统时间作为种子值 *        *        * Random(long s...
-    Random
-    帅比的博客
-     132
-    Random java产生随机数的几种方式 一.在j2se里我们可以使用Math.random()方法来产生一个随机数，这个产生的随机数是0-1之间的一个double，用时需要int强制转换，我们可以把他乘以一定的数，比如说乘以100，他就是个100以内的随机，这个在j2me中没有。 java.util.Random类有两种方式构建方式：带种子...
-    python标准库random中函数的作用_Python随机函数库random的使用方法详解
-    weixin_39589253的博客
-     364
-    Python随机函数库random的使用方法详解前言众所周知，python拥有丰富的内置库，还支持众多的第三方库，被称为胶水语言，随机函数库random，就是python自带的标准库，他的用法极为广泛，除了生成比较简单的随机数外，还有很多功能。使用random库：import randomrandom库主要函数：函数名说明用法random()生成一个0~1之间的随机浮点数,范围 0 ...
-    np.random.random()的用法
-    乃成的博客
-     2万+
-    np.random.random(size=None)函数参数 np.random.random((100, 50)) 上方代表生成100行 50列的随机浮点数，浮点数范围 : (0,1) 值得注意的是 np.random.random([100, 50]) 效果一样 ...
-    python中random.uniform(a、b)的作用_python中random模块详解
-    weixin_32818781的博客
-     1628
-    Python中的random模块用于生成随机数，它提供了很多函数。常用函数总结如下：1. random.random()用于生成一个0到1的随机浮点数: 0 <= n < 1.02. random.seed(n)用于设定种子值，其中的n可以是任意数字。random.random() 生成随机数时，每一次生成的数都是随机的。但是，使用 random.seed(n) 设定好种子之后，在先调...
-    Python3之random库的使用
-    sun9979的博客
-     1713
-    首先来说明一下，随机数是在各种复杂条件下产生的确定值，计算机无法产生真正的随机数，random库产生的是伪随机数，我们也常把伪随机数称为随机数。 1、random库概述 random库是使用随机数的Python标准库 伪随机数：采用梅森旋转算法生成的(伪)随机序列中元素 random库主要用于生成随机数 使用random库：import random 2、random库中的常用函数(共8个) ...
-    python导入random模块_python如何导入random模块
-    weixin_39525007的博客
-     38
-    random不是python解释器内置的模块，它不是Python解析器的内置模块。 导入random模块的方法是：import random例如:我想生成一个10以内的随机的整数，不需要random模块的别的方法的时候，也可以使用以下命令from random import randintrandom.randint(0,10)查看random模块的内置方法：dir(random)其中常用的方法有...
-    python有相关的证书可以考吗-python后端开发工程师考证试题
-    weixin_37988176的博客
-     127
-    关于 Python 程序格式框架的描述，以下选项中错误的是 （ A ）A: Python 语言不采用严格的“缩进”来表明程序的格式框架B: Python 单层缩进代码属于之前最邻近的一行非缩进代码，多层缩进代码根据缩进关系决定所属范围C: Python 语言的缩进可以采用 Tab 键实现D: 判断、循环、函数等语法形式能够通过缩进包含一批 Python 代码，进而表达对应的语义IDLE环境的退出命...
-    ©️2020 CSDN 皮肤主题: 大白 设计师:CSDN官方博客 返回首页
-    关于我们
-    招贤纳士
-    广告服务
-    开发助手
-    
-    400-660-0108
-    
-    kefu@csdn.net
-    
-    在线客服
-    工作时间 8:30-22:00
-    公安备案号11010502030143
-    京ICP备19004658号
-    京网文〔2020〕1039-165号
-    经营性网站备案信息
-    北京互联网违法和不良信息举报中心
-    网络110报警服务
-    中国互联网举报中心
-    家长监护
-    Chrome商店下载
-    ©1999-2021北京创新乐知网络技术有限公司
-    版权与免责声明
-    版权申诉
-    出版物许可证
-    营业执照
-    
-    超级大黄狗Shawn
-    码龄3年
-     暂无认证
-    33
-    原创
-    1万+
-    周排名
-    3万+
-    总排名
-    38万+
-    访问
-    
-    等级
-    2102
-    积分
-    1058
-    粉丝
-    703
-    获赞
-    86
-    评论
-    3923
-    收藏
-    持之以恒
-    私信
-    关注
-    搜博主文章
-    
-    热门文章
-    快速入门（完整）：Python实例100个（基于最新Python3.7版本）  272485
-    Python中的与或非以及逻辑短路  27090
-    海龟绘图:Python3.7的turtle模块  15109
-    随机数：Python3.7的random模块详解  10870
-    用python快速制作xml文件  10463
-    分类专栏
-    
-    LeetCode
-    7篇
-    
-    bodymovin
-    1篇
-    
-    Kotlin
-    1篇
-    
-    Android
-    1篇
-    最新评论
-    快速入门（完整）：Python实例100个（基于最新Python3.7版本）
-    Tisfy: 文笔流畅，修辞得体，深得魏晋诸朝遗风
-    
-    快速入门（完整）：Python实例100个（基于最新Python3.7版本）
-    m0_56695364: 很多错的题目真有意思
-    
-    快速入门（完整）：Python实例100个（基于最新Python3.7版本）
-    undefined?1:0: 第三题： [code=python] n = 0 while not (int((n+100) ** 0.5) ** 2 == n+100 and int((n+100+168) ** 0.5) ** 2 == (n+100+168)): n += 1 print(n) [/code]
-    
-    花式迭代器：Python3.7的itertools模块
-    呼呼: 学习了！
-    
-    海龟绘图:Python3.7的turtle模块
-    CocoYiy: 爱了爱了，感谢博主
-    
-    最新文章
-    工资条: Main部分部分
-    工资条: EmailSender部分
-    工资条: OneEmailInfo部分
-    2018年33篇
-    
-     
-    
-    目录
-    随机数模块random
-    常用函数
-    random.seed()
-    random.getstate()
-    random.setstate()
-    random.getrandbits()
-    random.random()
-    random.uniform()
-    random.randrange()
-    random.randint()
-    random.choice()
-    random.choices()
-    random.sample()
-    random.shuffle()
-    不同的分布模式
-    
-    此内容解决你搜索的问题？
-    否
-    是
-    
-    
-    举报
-    </p>
+    <p>CSDN首页
+        首页
+        博客
+        程序员学院
+        下载
+        论坛
+        问答
+        代码
+        直播
+        能力认证
+        高校
+        random
+
+        登录/注册
+        会员中心
+        收藏
+        消息
+        创作中心
+        随机数：Python3.7的random模块详解
+
+        超级大黄狗Shawn 2018-08-06 17:38:15 10917 收藏 111
+        文章标签： Python
+        版权
+        随机数模块random
+        作者:Shawn
+        python3.7
+        手册
+        https://docs.python.org/3/library/random.html#module-random
+        部分图片转自wiki
+
+        随机数模块random
+        常用函数
+        random.seed()
+        random.getstate()
+        random.setstate()
+        random.getrandbits()
+        random.random()
+        random.uniform()
+        random.randrange()
+        random.randint()
+        random.choice()
+        random.choices()
+        random.sample()
+        random.shuffle()
+        不同的分布模式
+        常用函数
+        random.seed()
+        random.seed(a=None, version=2)
+        1
+        设置随机种子 ，用于同步不同运行环境的随机数。
+        random.getstate()
+        random.getstate()
+        1
+        获得当前状态，用于恢复状态
+        random.setstate()
+        random.setstate(state)
+        1
+        恢复状态
+        >>> import random
+        >>> s=random.getstate()
+        >>> random.random()
+        0.15441857485858956
+        >>> random.random()
+        0.6330314601528841
+        >>> random.setstate(s)
+        >>> random.random()
+        0.15441857485858956
+        >>> random.random()
+        0.6330314601528841
+        >>> random.random()
+        0.04725013105129261
+        1
+        2
+        3
+        4
+        5
+        6
+        7
+        8
+        9
+        10
+        11
+        12
+        13
+        random.getrandbits()
+        random.getrandbits(k)
+        1
+        生成占内存k位以内的随机整数，硬核秃头专属。
+        >>> import random
+        >>> random.getrandbits(10)
+        674
+        >>> random.getrandbits(10)
+        10
+        >>> random.getrandbits(10)
+        745
+        >>> random.getrandbits(10)
+        560
+        >>> random.getrandbits(10)
+        162
+        1
+        2
+        3
+        4
+        5
+        6
+        7
+        8
+        9
+        10
+        11
+        random.random()
+        random.random()
+        1
+        随机产生一个[0,1.)数字。
+        >>> random()
+        0.37444887175646646
+        1
+        2
+        random.uniform()
+        random.uniform(a, b)
+        1
+        产生一个a、b区间的随机数。
+        >>> uniform(2.5, 10.0)
+        3.1800146073117523
+        1
+        2
+        random.randrange()
+        random.randrange(start, stop[, step])
+        1
+        整数随机。
+        功能等同于choice(range(start, stop, step))。
+        >>> randrange(10) # 0到9随机
+        7
+        >>> randrange(0, 101, 2) # 0到100随机偶数
+        26
+        1
+        2
+        3
+        4
+        random.randint()
+        random.randint(a, b)
+        1
+        返回一个[a,b]的随机整数。
+        功能等同于randrange(a, b+1)。
+        random.choice()
+        random.choice(seq)
+        1
+        返回对象中的一个随机元素。
+        random.choices()
+        random.choices(population, weights=None, *, cum_weights=None, k=1)
+        1
+        随机选择，是random.choice(seq)的升级版本。
+        >>> choice(['win', 'lose', 'draw'])
+        'draw'
+        1
+        2
+        random.sample()
+        random.sample(population, k)
+        1
+        随机取样
+        >>> sample([10, 20, 30, 40, 50], k=4)
+        [40, 10, 50, 30]
+        1
+        2
+        choices与sample的区别：
+        choices在抽取随机元素时是包含重复元素的，即：一个元素可能会被抽取多次。
+        反之，在sample中，抽取的元素是不重复的。
+        所以，在抽取元素大于样本集总数时，choices会继续而sample会报错：
+        >>> import random
+        >>> random.choices([1,2,3,4],k=4)
+        [4, 3, 4, 4]
+        >>> random.sample([1,2,3,4],k=4)
+        [3, 1, 2, 4]
+        >>> random.choices([1,2,3,4],k=5)
+        [3, 3, 2, 3, 2]
+        >>> random.sample([1,2,3,4],k=5)
+        Traceback (most recent call last):
+        File "<pyshell#5>", line 1, in <module>
+                random.sample([1,2,3,4],k=5)
+                File "F:\python\lib\random.py", line 321, in sample
+                raise ValueError("Sample larger than population or is negative")
+                ValueError: Sample larger than population or is negative
+                >>>
+                1
+                2
+                3
+                4
+                5
+                6
+                7
+                8
+                9
+                10
+                11
+                12
+                13
+                14
+                15
+                random.shuffle()
+                random.shuffle(x[, random])
+                1
+                打乱序列
+                >>> deck = 'ace two three four'.split()
+                >>> shuffle(deck)
+                >>> deck
+                ['four', 'two', 'ace', 'three']
+                1
+                2
+                3
+                4
+                不同的分布模式
+                random.triangular(low, high, mode)
+                https://en.wikipedia.org/wiki/Triangular_distribution
+                random.betavariate(alpha, beta)
+                https://en.wikipedia.org/wiki/Beta_distribution
+                random.expovariate(lambd)
+                https://en.wikipedia.org/wiki/Exponential_distribution
+                random.gammavariate(alpha, beta)
+                https://en.wikipedia.org/wiki/Gamma_distribution
+                random.gauss(mu, sigma)
+                https://en.wikipedia.org/wiki/Normal_distribution
+                random.lognormvariate(mu, sigma)
+                https://en.wikipedia.org/wiki/Log-normal_distribution
+                random.normalvariate(mu, sigma)
+                https://en.wikipedia.org/wiki/Normal_distribution
+                random.vonmisesvariate(mu, kappa)
+                https://en.wikipedia.org/wiki/Von_Mises_distribution
+                random.paretovariate(alpha)
+                https://en.wikipedia.org/wiki/Pareto_distribution
+                random.weibullvariate(alpha, beta)
+                https://en.wikipedia.org/wiki/Weibull_distribution
+
+                random.triangular(low, high, mode)
+                以三角分布的概率分布返回随机数。
+                三角分布
+                import random
+                import collections
+                counter=collections.Counter() # 方便偷懒，用Counter统计次数。
+                for i in range(10000):
+                step=str(round(random.triangular(0,9,7)))
+                counter.update(step)
+
+                print(counter)
+
+                for i in range(10):
+                print(str(i),end='')
+                value=round(counter[str(i)]/100.)
+                for j in range(value):
+                print('*',end='')
+                print('')
+
+                ================= RESTART: F:\PyWorkspace\blank.py =================
+                Counter({'7': 1963, '6': 1946, '5': 1617, '4': 1264, '8': 1105, '3': 944, '2': 668, '1': 323, '9': 138,
+                '0': 32})
+                0
+                1***
+                2*******
+                3*********
+                4*************
+                5****************
+                6*******************
+                7********************
+                8***********
+                9*
+                1
+                2
+                3
+                4
+                5
+                6
+                7
+                8
+                9
+                10
+                11
+                12
+                13
+                14
+                15
+                16
+                17
+                18
+                19
+                20
+                21
+                22
+                23
+                24
+                25
+                26
+                27
+                28
+                29
+                random.betavariate(alpha, beta)
+                以beta分布的概率分布返回0到1之间的随机数。
+                beta分布
+                import random
+                import collections
+                counter=collections.Counter()
+                for i in range(10000):
+                step=str(round(random.betavariate(2,5)*10))
+                counter.update(step)
+
+                print(counter)
+
+                for i in range(10):
+                print(str(i),end='')
+                value=round(counter[str(i)]/100.)
+                for j in range(value):
+                print('*',end='')
+                print('')
+
+
+                Counter({'2': 2424, '3': 2173, '1': 1941, '4': 1512, '5': 1000, '6': 416, '0': 316, '7': 167, '8': 48,
+                '9': 3})
+                0***
+                1*******************
+                2************************
+                3**********************
+                4***************
+                5**********
+                6****
+                7**
+                8
+                9
+                1
+                2
+                3
+                4
+                5
+                6
+                7
+                8
+                9
+                10
+                11
+                12
+                13
+                14
+                15
+                16
+                17
+                18
+                19
+                20
+                21
+                22
+                23
+                24
+                25
+                26
+                27
+                28
+                29
+                random.expovariate(lambd)
+                以指数分布的概率分布返回随机数。
+                指数分布
+
+                import random
+                import collections
+                counter=collections.Counter()
+                for i in range(10000):
+                step=str(round(random.expovariate(1)))
+                counter.update(step)
+
+                print(counter)
+
+                for i in range(10):
+                print(str(i),end='')
+                value=round(counter[str(i)]/100.)
+                for j in range(value):
+                print('*',end='')
+                print('')
+
+
+                ============== RESTART: F:\PyWorkspace\LeetCode\expovariate.py ==============
+                Counter({'0': 3950, '1': 3862, '2': 1403, '3': 484, '4': 192, '5': 73, '6': 18, '7': 12, '8': 4, '9':
+                2})
+                0****************************************
+                1***************************************
+                2**************
+                3*****
+                4**
+                5*
+                6
+                7
+                8
+                9
+                1
+                2
+                3
+                4
+                5
+                6
+                7
+                8
+                9
+                10
+                11
+                12
+                13
+                14
+                15
+                16
+                17
+                18
+                19
+                20
+                21
+                22
+                23
+                24
+                25
+                26
+                27
+                28
+                29
+                random.gammavariate(alpha, beta)
+                以gamma分布的概率分布返回随机数。
+                gamma分布
+
+                import random
+                import collections
+                counter=collections.Counter()
+                for i in range(10000):
+                step=str(round(random.gammavariate(9,0.5)))
+                counter.update(step)
+
+                print(counter)
+
+                for i in range(10):
+                print(str(i),end='')
+                value=round(counter[str(i)]/100.)
+                for j in range(value):
+                print('*',end='')
+                print('')
+
+
+                ============== RESTART: F:\PyWorkspace\LeetCode\gammavariate.py ==============
+                Counter({'4': 2671, '5': 2244, '3': 2054, '6': 1303, '2': 698, '7': 616, '8': 236, '1': 103, '9': 89,
+                '0': 32})
+                0
+                1*
+                2*******
+                3*********************
+                4***************************
+                5**********************
+                6*************
+                7******
+                8**
+                9*
+                1
+                2
+                3
+                4
+                5
+                6
+                7
+                8
+                9
+                10
+                11
+                12
+                13
+                14
+                15
+                16
+                17
+                18
+                19
+                20
+                21
+                22
+                23
+                24
+                25
+                26
+                27
+                28
+                29
+                30
+                random.gauss(mu, sigma)
+                以高斯分布的概率分布返回随机数。
+                高斯分布
+
+                import random
+                import collections
+                counter=collections.Counter()
+                for i in range(10000):
+                step=str(round(random.gauss(5,1)))
+                counter.update(step)
+
+                print(counter)
+
+                for i in range(10):
+                print(str(i),end='')
+                value=round(counter[str(i)]/100.)
+                for j in range(value):
+                print('*',end='')
+                print('')
+
+                ================= RESTART: F:\PyWorkspace\LeetCode\gauss.py =================
+                Counter({'5': 3803, '4': 2429, '6': 2418, '3': 660, '7': 582, '2': 59, '8': 41, '9': 6, '1': 2})
+                0
+                1
+                2*
+                3*******
+                4************************
+                5**************************************
+                6************************
+                7******
+                8
+                9
+                1
+                2
+                3
+                4
+                5
+                6
+                7
+                8
+                9
+                10
+                11
+                12
+                13
+                14
+                15
+                16
+                17
+                18
+                19
+                20
+                21
+                22
+                23
+                24
+                25
+                26
+                27
+                28
+                random.lognormvariate(mu, sigma)
+                以对数正态分布的概率分布返回随机数。
+                对数正态分布
+
+                import random
+                import collections
+                counter=collections.Counter()
+                for i in range(10000):
+                step=str(round(random.triangular(5,0.02)))
+                counter.update(step)
+
+                print(counter)
+
+                for i in range(10):
+                print(str(i),end='')
+                value=round(counter[str(i)]/100.)
+                for j in range(value):
+                print('*',end='')
+                print('')
+
+
+                ============= RESTART: F:\PyWorkspace\LeetCode\lognormvariate.py =============
+                Counter({'3': 3232, '2': 3168, '4': 1626, '1': 1621, '0': 178, '5': 175})
+                0**
+                1****************
+                2********************************
+                3********************************
+                4****************
+                5**
+                6
+                7
+                8
+                9
+                1
+                2
+                3
+                4
+                5
+                6
+                7
+                8
+                9
+                10
+                11
+                12
+                13
+                14
+                15
+                16
+                17
+                18
+                19
+                20
+                21
+                22
+                23
+                24
+                25
+                26
+                27
+                28
+                29
+                30
+                random.normalvariate(mu, sigma)
+
+                同random.gauss(mu, sigma)
+                random.vonmisesvariate(mu, kappa)
+
+                以von Mises分布的概率分布返回随机数。
+                又作圆上正态分布
+                von Mises分布
+
+                import random
+                import collections
+                counter=collections.Counter()
+                for i in range(10000):
+                step=str(round(random.vonmisesvariate(3.14,2)))
+                counter.update(step)
+
+                print(counter)
+
+                for i in range(7):
+                print(str(i),end='')
+                value=round(counter[str(i)]/100.)
+                for j in range(value):
+                print('*',end='')
+                print('')
+
+
+                ============ RESTART: F:\PyWorkspace\LeetCode\vonmisesvariate.py ============
+                Counter({'3': 4795, '4': 2609, '2': 1732, '5': 437, '1': 296, '6': 87, '0': 44})
+                0
+                1***
+                2*****************
+                3************************************************
+                4**************************
+                5****
+                6*
+                1
+                2
+                3
+                4
+                5
+                6
+                7
+                8
+                9
+                10
+                11
+                12
+                13
+                14
+                15
+                16
+                17
+                18
+                19
+                20
+                21
+                22
+                23
+                24
+                25
+                26
+                random.paretovariate(alpha)
+                以Pareto分布的概率分布返回随机数。
+                Pareto分布
+
+                import random
+                import collections
+                counter=collections.Counter()
+                for i in range(10000):
+                step=str(round(random.paretovariate(2)))
+                counter.update(step)
+
+                print(counter)
+
+                for i in range(10):
+                print(str(i),end='')
+                value=round(counter[str(i)]/100.)
+                for j in range(value):
+                print('*',end='')
+                print('')
+
+
+
+                ============= RESTART: F:\PyWorkspace\LeetCode\paretovariate.py =============
+                Counter({'1': 5644, '2': 2853, '3': 830, '4': 347, '5': 179, '6': 82, '7': 76, '8': 45, '9': 36, '0':
+                27})
+                0
+                1********************************************************
+                2*****************************
+                3********
+                4***
+                5**
+                6*
+                7*
+                8
+                9
+                1
+                2
+                3
+                4
+                5
+                6
+                7
+                8
+                9
+                10
+                11
+                12
+                13
+                14
+                15
+                16
+                17
+                18
+                19
+                20
+                21
+                22
+                23
+                24
+                25
+                26
+                27
+                28
+                29
+                30
+                random.weibullvariate(alpha, beta)
+                以Weibull分布的概率分布返回随机数。
+                Weibull分布
+
+                import random
+                import collections
+                counter=collections.Counter()
+                for i in range(10000):
+                step=str(round(random.weibullvariate(1,5)*5))
+                counter.update(step)
+
+                print(counter)
+
+                for i in range(10):
+                print(str(i),end='')
+                value=round(counter[str(i)]/100.)
+                for j in range(value):
+                print('*',end='')
+                print('')
+
+
+
+                ============= RESTART: F:\PyWorkspace\LeetCode\weibullvariate.py =============
+                Counter({'5': 3601, '4': 2847, '6': 1753, '3': 1247, '2': 294, '7': 239, '1': 17, '8': 2})
+                0
+                1
+                2***
+                3************
+                4****************************
+                5************************************
+                6******************
+                7**
+                8
+                9
+                1
+                2
+                3
+                4
+                5
+                6
+                7
+                8
+                9
+                10
+                11
+                12
+                13
+                14
+                15
+                16
+                17
+                18
+                19
+                20
+                21
+                22
+                23
+                24
+                25
+                26
+                27
+                28
+                29
+                30
+
+                点赞
+                20
+
+                评论
+                3
+
+                分享
+
+                收藏
+                111
+
+                打赏
+
+                举报
+                关注
+                一键三连
+
+                java Random类
+                weibaq的专栏
+                2922
+                Random类 (java.util)
+                Random类中实现的随机算法是伪随机，也就是有规则的随机。在进行随机时，随机算法的起源数字称为种子数(seed)，在种子数的基础上进行一定的变换，从而产生需要的随机数字。相同种子数的Random对象，相同次数生成的随机数字是完全相同的。也就是说，两个种子数相同的Random对象，第一次生成的随机数字完全相同，第二次生成的随机数字也
+                python random函数
+                Dou
+                9372
+                调用random前要import random模块。 测试： 1、random.random() : 生成一个随机的浮点数，在0 ~ 1之间 2、random.sample() : 从指定的序列或列表中，
+                随机的截取指定长度的片段。 测试1(序列)： 测试2（列表）： 3、random.randint() : 随机生成一个int类型的数，可以指...
+
+                优质评论可以帮助作者获得更高权重
+                表情包
+                m0_45344066
+                m0_45344066:业界良心2 年前回复
+                点赞
+                weixin_43914993
+                YM_moon:文章不错呀，怎么才能收藏2 年前回复
+                点赞
+                Zack_Zheng
+                刘备同学:厉害了2 年前回复
+                点赞
+                相关推荐
+                Random用法详解_xxx_1_1的博客
+                3-30
+                第一种实现使用Random类中的nextInt(int n)方法直接实现。
+                第二种实现中,首先调用nextInt()方法生成一个任意的int数字,该数字和10取余以后生成的数字区间为(-10,10),然后再对该区间求绝对值,则得到的区间就是[0,10)了。
+                Random_大白的成长之路
+                4-24
+                Random位于java.util包下,可以产生随机数。
+                importjava.util.Random;publicclassRandomText{publicstaticvoidmain(String[]args){//创建随机数对象Random
+                random=newRandom();//随机产生一个int类型取值范围内的数字。intnum=random.nextInt...
+                Python之random详解（新手必看）
+                qq_42849332的博客
+                1万+
+                前言：为了总结一下random模块的使用方法，我翻看了CSDN中几乎所有的关于random的介绍，发现其实都差不多。不过我还是选择自己再写一遍，一来加深印象，二来增加一些新的内容。
+                1.****random.random 随机生成[0.1)的浮点数 import random print(random.random()) #运行结果：0.4041810247152263 ...
+                python之random库使用
+                jinsefm的博客
+                5999
+                python之random库random概述伪随机数：采用梅森旋转算法生成的（伪）随机序列中元素random库主要用于生成随机数使用random库：import
+                random基本随机数函数seed(),random()扩展随机数函数randint(),getrandbits(),uniform(),randrange(),choice(),shuffele()函数描述seed(a=None)初始化...
+                Random_老猫咪的春天的博客
+                4-23
+                Random类实现的Random使用protected实用程序方法,每次调用可以提供多达32个伪随机生成位。 许多应用程序会发现方法Math.random()使用起来更简单。
+                java.util.Random的java.util.Random是线程安全的。 但是,跨线程的同时使用java. util.Random...
+                JAVA中的Random()_霓虹深处_java random
+                3-30
+                调用这个Math.Random()函数能够返回带正号的double值,该值大于等于0.0且小于1.0,即取值范围是[0.0,1.0)的左闭右开区间,返回值是一个伪随机选择的数,在该范围内(近似)均匀分布。例子如下:
+                ...
+                numpy.random用法
+                weixin_42029738的博客
+                5万+
+                最近发现numpy的random用法有很多，不注意很容易混淆，今天参考几个博客内容整理了一下。 numpy.random.randint
+                low、high、size三个参数。默认high是None,如果只有low，那范围就是[0,low)。如果有high，范围就是[low,high)。 &gt;&gt;&gt;
+                np.random.randint(2, size=10) array([1, ...
+                verilog中系统任务函数$random的使用
+                CLL_caicai的博客
+                1442
+                一、使用 $random可以产生一个有符号的32bit随机整数，一般的用法为： 1、产生随机整数： num = $random%b 其中，b为十进制整数； 则num为范围在 -（b-1）:(b-1)
+                中的随机数 2、产生随机正整数： num = {$random}%b 其中，b为十进制整数； 则num为范围在 0:(b-1) 中的随机数 二、仿真
+                产生20次-100~100的随机数；随后产生20次0-100的随机数： module random_tsb( ); re
+                random_weixin_34174132的博客
+                1-27
+                一. 简介 ramdom模块提供了一个随机数的函数:random()
+                它可以返回一个随机生成的实数,范围在[0,1)范围内。需要注意的是random()是不能直接访问的,需要导入模块random才可以使用。二. 使用 1 import random 2 3 #
+                第一个随机数...
+                Python3 中 random模块
+                angjijing7393的博客
+                95
+                Python中的random模块用于生成随机数。 下面具体介绍random模块的功能： 1.random.random() #用于生成一个0到1的 随机浮点数：0<= n < 1.0 1 import
+                    random 2 a=random.random() 3 print (a) 2.random.uniform(a,b) #... Python3 random库函数 清晨Jerusha 736
+                    random库是产生随机数的python标准库，包括基本随机数函数和扩展随机数函数。1、基本随机数函数有：1）seed(a=None),初始化给定的随机种子，默认为当前系统时间。通过seed()函数生成的随机数是假的随机数，也成为稳定随机数，是指返回的随机数是一个稳定算法所得出的稳定结果序列，若种子相同，后续所有的随机数都一样。2）random()生成一个[0.0,1.0)之间的随机小数impor...
+                    Python中random.random()和random.Random()的区别是什么? Python美丽星球--微信(Felixzfb) 1万+
+                    Python是完全面向对象的，因此所有的数据都是对象 random.random()生成0和1之间的随机浮点数float，它其实是一个隐藏的random.Random类的实例的random方法。
+                    random.Random() 生成random模块里得Random类的一个实例，这个实例不会和其他Random实例共享状态，一般是在多线程的情况下使用。
+                    random.random()生成0和1之间的随... python3-random模块详解 liulanba的博客 442 python3的random模块用于生成随机数，字符串等。
+                    1.random.random() 生成一个随机小数，范围在[0,1) import random t=random.random() print(t) # 0.2635740247512115
+                    2.random.int(min,max) 生成[min,max]的整数型随机数 import random t=random.randint(1,10) print(t) #10
+                    3.random.uniform(min,max) 生成一个 random() 仅做个人笔记 2177 java中存在两个随机函数，它们分别来自 java.long.Math.random() 和
+                    java.util.Random()其中前者的适用范围比较小，完全可以被后者取代。 java.lang.Math.random() public static double random();
+                    此方法是一个无参，double类型返回值的公开静态方法。 返回一个大于0的double类... Random yy1711408814的博客 81 package
+                    com.newedu.jb.day16.api;import java.util.Random;/** * Random的类的常用方法演示 * * 概述： * 产生伪随机数。 * * 构造方法： *
+                    Random()：无参的构造，创建一个新的随机数生成器。 * 默认使用当前的系统时间作为种子值 * * * Random(long s... Random 帅比的博客 132 Random
+                    java产生随机数的几种方式
+                    一.在j2se里我们可以使用Math.random()方法来产生一个随机数，这个产生的随机数是0-1之间的一个double，用时需要int强制转换，我们可以把他乘以一定的数，比如说乘以100，他就是个100以内的随机，这个在j2me中没有。
+                    java.util.Random类有两种方式构建方式：带种子... python标准库random中函数的作用_Python随机函数库random的使用方法详解 weixin_39589253的博客
+                    364
+                    Python随机函数库random的使用方法详解前言众所周知，python拥有丰富的内置库，还支持众多的第三方库，被称为胶水语言，随机函数库random，就是python自带的标准库，他的用法极为广泛，除了生成比较简单的随机数外，还有很多功能。使用random库：import
+                    randomrandom库主要函数：函数名说明用法random()生成一个0~1之间的随机浮点数,范围 0 ... np.random.random()的用法 乃成的博客 2万+
+                    np.random.random(size=None)函数参数 np.random.random((100, 50)) 上方代表生成100行 50列的随机浮点数，浮点数范围 : (0,1)
+                    值得注意的是 np.random.random([100, 50]) 效果一样 ... python中random.uniform(a、b)的作用_python中random模块详解
+                    weixin_32818781的博客 1628 Python中的random模块用于生成随机数，它提供了很多函数。常用函数总结如下：1. random.random()用于生成一个0到1的随机浮点数:
+                    0 <=n < 1.02. random.seed(n)用于设定种子值，其中的n可以是任意数字。random.random() 生成随机数时，每一次生成的数都是随机的。但是，使用
+                    random.seed(n) 设定好种子之后，在先调... Python3之random库的使用 sun9979的博客 1713
+                    首先来说明一下，随机数是在各种复杂条件下产生的确定值，计算机无法产生真正的随机数，random库产生的是伪随机数，我们也常把伪随机数称为随机数。 1、random库概述
+                    random库是使用随机数的Python标准库 伪随机数：采用梅森旋转算法生成的(伪)随机序列中元素 random库主要用于生成随机数 使用random库：import random
+                    2、random库中的常用函数(共8个) ... python导入random模块_python如何导入random模块 weixin_39525007的博客 38
+                    random不是python解释器内置的模块，它不是Python解析器的内置模块。 导入random模块的方法是：import
+                    random例如:我想生成一个10以内的随机的整数，不需要random模块的别的方法的时候，也可以使用以下命令from random import
+                    randintrandom.randint(0,10)查看random模块的内置方法：dir(random)其中常用的方法有... python有相关的证书可以考吗-python后端开发工程师考证试题
+                    weixin_37988176的博客 127 关于 Python 程序格式框架的描述，以下选项中错误的是 （ A ）A: Python 语言不采用严格的“缩进”来表明程序的格式框架B: Python
+                    单层缩进代码属于之前最邻近的一行非缩进代码，多层缩进代码根据缩进关系决定所属范围C: Python 语言的缩进可以采用 Tab 键实现D: 判断、循环、函数等语法形式能够通过缩进包含一批 Python
+                    代码，进而表达对应的语义IDLE环境的退出命... ©️2020 CSDN 皮肤主题: 大白 设计师:CSDN官方博客 返回首页 关于我们 招贤纳士 广告服务 开发助手 400-660-0108
+                    kefu@csdn.net 在线客服 工作时间 8:30-22:00 公安备案号11010502030143 京ICP备19004658号 京网文〔2020〕1039-165号 经营性网站备案信息
+                    北京互联网违法和不良信息举报中心 网络110报警服务 中国互联网举报中心 家长监护 Chrome商店下载 ©1999-2021北京创新乐知网络技术有限公司 版权与免责声明 版权申诉 出版物许可证
+                    营业执照 超级大黄狗Shawn 码龄3年 暂无认证 33 原创 1万+ 周排名 3万+ 总排名 38万+ 访问 等级 2102 积分 1058 粉丝 703 获赞 86 评论 3923 收藏 持之以恒
+                    私信 关注 搜博主文章 热门文章 快速入门（完整）：Python实例100个（基于最新Python3.7版本） 272485 Python中的与或非以及逻辑短路 27090
+                    海龟绘图:Python3.7的turtle模块 15109 随机数：Python3.7的random模块详解 10870 用python快速制作xml文件 10463 分类专栏 LeetCode 7篇
+                    bodymovin 1篇 Kotlin 1篇 Android 1篇 最新评论 快速入门（完整）：Python实例100个（基于最新Python3.7版本） Tisfy:
+                    文笔流畅，修辞得体，深得魏晋诸朝遗风 快速入门（完整）：Python实例100个（基于最新Python3.7版本） m0_56695364: 很多错的题目真有意思
+                    快速入门（完整）：Python实例100个（基于最新Python3.7版本） undefined?1:0: 第三题： [code=python] n=0 while not (int((n+100)
+                    ** 0.5) ** 2==n+100 and int((n+100+168) ** 0.5) ** 2==(n+100+168)): n +=1 print(n) [/code]
+                    花式迭代器：Python3.7的itertools模块 呼呼: 学习了！ 海龟绘图:Python3.7的turtle模块 CocoYiy: 爱了爱了，感谢博主 最新文章 工资条: Main部分部分
+                    工资条: EmailSender部分 工资条: OneEmailInfo部分 2018年33篇 目录 随机数模块random 常用函数 random.seed() random.getstate()
+                    random.setstate() random.getrandbits() random.random() random.uniform() random.randrange()
+                    random.randint() random.choice() random.choices() random.sample() random.shuffle() 不同的分布模式
+                    此内容解决你搜索的问题？ 否 是 举报 </p>
 </body>
+
 </html>
