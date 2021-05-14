@@ -9,3 +9,6 @@ padding 内边距
 margin外边距
 
 solid 实线  dotted点状虚线 dashed虚线 aouble 双线
+
+position: absolute
+
