@@ -143,7 +143,7 @@
       简写 border:solid xxpx color;
       单边框 border-top:xxx
 
-      (47)内边距padding 
+5.10  (47)内边距padding 
       会影响盒子大小 和border语法差不多
 
       (48) 外边距margin
@@ -164,7 +164,7 @@
       如果两外边距auto，则设置相同
       利用这个特点可以使元素居中
 
-      (50)垂直方向布局
+5.11  (50)垂直方向布局
       使用overflow属性来设置父元素如何处理溢出的子元素(在父元素中写overflow:xxx)
       可选：visible默认值 子元素会从父元素溢出，在父元素外部的位置显示
       hidden 溢出部分会被剪切不显示
@@ -182,7 +182,7 @@
       父子元素:父子元素间邻外边框，子元素的会传递给父元素(上外边框)
       父子外边距的折叠会影响到页面的布局，必须处理
 
-      (52)行内元素的盒模型
+5.12  (52)行内元素的盒模型
       行内元素不支持设置高度和宽度 水平方向不会重叠
       可以设置padding，但是垂直方向padding不会影响页面布局
       可以设置border，垂直方向的不会影响布局
@@ -200,7 +200,7 @@
       visable默认值，元素在页面显示
       hidden 元素在页面隐藏 不显示 但是依然占位
 
-      (53)浏览器的默认样式
+5.13  (53)浏览器的默认样式
       通常情况下要去掉浏览器的默认样式
       body{margin:0px}
       p{margin:0px}
@@ -210,13 +210,40 @@
       (56)shift alt f格式化格式
       text-decoration:none 去掉下划线
 
-     (57)网易新闻列表
+5.14 (57)网易新闻列表
      变为行内块元素
      display:inline-block
      font-weight:bold加粗
      text-decoration去掉下划线
      list-style square 设置为方块列表头
-     
+
+5.15(58)盒子大小
+     box-size:border-box
+     默认情况下,盒子可见框的大小由内容区,内边距和边框共同决定
+     box-sizing 用来设置盒子尺寸的计算方式(设置width和height 作用)
+     可选值  content-box 默认值 宽度和高度用来设置内容区的大小
+     border-box 宽度和高度用来设置整个盒子的可见框大小
+     width和height 指是内容区和内边距和边框的总大小
+
+     (59)轮廓阴影和圆角
+     outline 用来设置元素的轮廓线.用法和border一样
+     轮廓和边框不同的是轮廓不会影响可见框大小
+
+     box-shadow用来设置元素的阴影效果,阴影不会影响页面布局
+     box-shadow:10px 10px  10pxcolor; 
+     数字是阴影偏移点 第一个是水平移动量正右负左 第二是垂直 正下负上 第三个是阴影的模糊半径,越大越模糊
+
+     border-radius 10px 20px 30px 40px;分别指定4个 顺时针 左上开始 三个值 右上和左下共享数据 2个值 左上右下 左下右上
+     border-top-left-radius
+     border-top-right-radius
+     border-bottom-left-radius
+     border-bottom-right-radius 
+     border-top-left-radius:40px;半径40的圆角
+      border-top-left-radius:40px 50px;第一个是水平 第二个是垂直
+      border-radius:50%; 可以设置为圆
+
+
+
      
 
 
