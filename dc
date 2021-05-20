@@ -10,5 +10,6 @@ margin外边距
 
 solid 实线  dotted点状虚线 dashed虚线 aouble 双线
 
-position: absolute
+position: absolute 绝对地位
 
+width: calc()用于动态计算

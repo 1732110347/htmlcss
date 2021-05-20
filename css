@@ -275,7 +275,59 @@
         1设置因素的浮动
         2将元素设置为行内快元素
         3将元素的overflow设置为一个非visible的值  为元素设置overflow:hidden
-       
+
+5.20    (65)BFC演示
+         overflow:hidden;
+
+         (66)clear  清除浮动元素对当前元素所产生的影响
+         可选值 
+         left 清除左侧浮动元素对当前元素影响  right清除右侧  both清除两侧中最大影响的那侧
+         原理 设置浮动后，浏览器会自动为元素添加一个上边距，以使其位置不受其他元素影响
+
+5.21   (67)after伪类清除高温塌陷
+        .xxafter{
+              content:'';
+              display:block;
+              clear:both;
+        }
+5.22   (68)clearfix   可以同时解决高度塌陷和外边距重叠的问题
+        .clearfix::before,
+        .clearfix::after{
+              content:'';
+              display:table;
+              clear:both;
+        }
+
+5.23   (69)相对定位position
+        定位是一种更高级的布局手段
+        通过定位可以将元素摆到页面容易位置
+        使用position属性来设置定位
+        可选值
+        static 默认值 元素静止没有开启
+        relative相对定位  offset偏移量
+        对照就是自己
+        不会脱离文档流
+        不改变性质
+
+        absolute绝对定位
+        fixed固定定位
+        sticky粘滞定位
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
