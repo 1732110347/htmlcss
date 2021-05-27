@@ -30,3 +30,6 @@ inherit	规定应该从父元素继承 vertical-align 属性的值。
 transparent属性用来指定全透明色彩
 
 clip-path:circle();剪切
+
+background-clip:content-box; 将背景颜色设置到内容区，
+        边框和内边距不再有背景颜色
