@@ -350,11 +350,40 @@
         background-clip:content-box; 将背景颜色设置到内容区，
         边框和内边距不再有背景颜色
 
+5.29    (76)字体族
+       color设置字体颜色
+       font-size字体大小
+       em相当于当前元素的一个font-size
+       rem相当于根元素的一个font-size
+       font-family:''字体格式  
+            可宋体。。
+            serif 衬线字体(装饰字)
+            sans-serif 非衬线字体
+            monospace 等宽字体
+       空格要加''
+       字体生效优先使用第一个，无法使用使用第二个以此类推
 
+       @font-face{  可以将服务器中的字体直接提供给用户去使用
+             font-family:'xx';   指定字体的名字
+             src:url(字体路径);   服务器中字体的路径
+       }
 
+5.30   (77)图标字体
+       通过图片引入图标  图标直接设置为字体  通过font-face来对字体引入
+       1直接通过类名来使用图标字体
+       <i class="fas xxx"></i>   <i class="fab xxx"></i>
 
+5.31   (78)2通过伪元素
+       1找到要设置的通过before或after选中
+       2 在content中设置字体编码
+       3 设置样式
+       content:'\xx';
+       font-family:'Font Awesome 5 Free'
+       font-weight:xx;
 
-
+       3通过实体来使用图标字体
+       &#x;图标的编码
+       <span class="fas">&#x;图标的编码;
 
 
 
