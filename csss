@@ -377,15 +377,16 @@
        1找到要设置的通过before或after选中
        2 在content中设置字体编码
        3 设置样式
+       xx::xxx{
        content:'\xx';
        font-family:'Font Awesome 5 Free'
-       font-weight:xx;
+       font-weight:xx;}
 
        3通过实体来使用图标字体
        &#x;图标的编码
-       <span class="fas">&#x;图标的编码;
+       <xxx class="fas">&#x;图标的编码;
 
-
+6.1   (79)iconfont
 
 
 
