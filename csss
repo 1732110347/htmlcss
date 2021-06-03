@@ -400,6 +400,17 @@
 
        设置行间距
 
+6.3    (81)字体的简写属性
+       font:字体大小/行高 字体族 不写默认、
+       font:bold italic 字体 字体族
+       
+       font-weight:bold;加粗 100-900级别
+       bold 黑体粗体
+       italic 斜体
+       normal 默认 不加粗
+
+       font-style:italic; 斜体
+       normal
 
 
 
