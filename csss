@@ -8,7 +8,7 @@
 
       第三种(外部样式)
       在网页外设置一个css文件 需要link标签进行引用
-      <link rel="stylesheet“href=""> stylesheet样式表
+      <link rel="stylesheet"href=""> stylesheet样式表              
     
     (29)基本语法
     p选择器  选中所有p元素
@@ -429,9 +429,18 @@
 
       (86)jd下拉框
 
+9.13  (88)背景1
+      background-image: url(图片路径) 
+      可以同时设置背景颜色和图片m
+       如果背景图片小于元素，则背景图片会自动在元素中平铺将元素铺满
+       如果背景的图片大于元素，将会一个部分背景无法完全显示
+       如果背景图片和元素一样大，则会直接正常显示
+       background-repeat :repeat(默认) repeat-x 沿着x轴重复 repeat-y y重复 no-repeat不重复 用来设置背景的重复方式 
+       background-position top left right bottom center px px用来设置背景图片的位置
 
-
-
+      (89)背景2
+      background-clip: border-box 默认值，背景会出现在边框的下边 padding-box 背景不会出现在边框，只出现在内容区和内边距 content-box背景只会出现在内容区
+      
 
 
 
