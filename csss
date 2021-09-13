@@ -277,7 +277,7 @@
         3将元素的overflow设置为一个非visible的值  为元素设置overflow:hidden
 
 5.20    (65)BFC演示
-         overflow:hidden;
+         overflow:hidden;裁剪多余
 
          (66)clear  清除浮动元素对当前元素所产生的影响
          可选值 
@@ -407,11 +407,31 @@
        font-weight:bold;加粗 100-900级别
        bold 黑体粗体
        italic 斜体
+<<<<<<< HEAD
        normal 默认 不加粗 
+=======
+       normal 默认 不加粗
+>>>>>>> e76969d9c32b276f173b84084793bec39cb49385
 
        font-style:italic; 斜体
        normal
 
+9.5   (82)文字水平和垂直对齐
+      text-align: 水平right left center justify 两端对齐
+      vertical-align 垂直beseline默认值 基线对齐 top顶部对齐和父元素 bottom底部对齐 middle居中对齐
+      可以直接写值px
+
+      (83)其他的文本样式
+      text-decoration: none什么都没 underline下划线 line-through删除线 overline上划线
+      white-space：空白区 normal正常 nowrap不换行 pre保留空白
+      overflow:hidden裁剪多余
+      text-overflow:ellipsis;多余显示省略号
+
+      (84)jd结构
+
+      (85)jd基本样式
+
+      (86)jd下拉框
 
 
 
