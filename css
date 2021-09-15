@@ -407,7 +407,11 @@
        font-weight:bold;加粗 100-900级别
        bold 黑体粗体
        italic 斜体
+<<<<<<< HEAD
+       normal 默认 不加粗 
+=======
        normal 默认 不加粗
+>>>>>>> e76969d9c32b276f173b84084793bec39cb49385
 
        font-style:italic; 斜体
        normal
