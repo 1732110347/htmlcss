@@ -139,7 +139,7 @@
       (46)边框border 
       宽度border-width 颜色border-color 样式border-style
        写4个的时候是顺时针 border-top单上 
-      solid 实线  dotted点状虚线 dashed虚线 aouble 双线
+      solid 实线  dotted点状虚线 dashed虚线 aouble 双线 double双线
       简写 border:solid xxpx color;
       单边框 border-top:xxx
 
