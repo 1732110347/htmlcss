@@ -440,7 +440,9 @@
        background-position top left right bottom center px px用来设置背景图片的位置
 
       (89)背景2
-      background-clip: border-box 默认值，背景会出现在边框的下边 padding-box 背景不会出现在边框，只出现在内容区和内边距 content-box背景只会出现在内容区
+      background-clip: border-box 默认值，背景会出现在边框的下边 
+      padding-box 背景不会出现在边框，只出现在内容区和内边距 
+      content-box背景只会出现在内容区
       
 
 
