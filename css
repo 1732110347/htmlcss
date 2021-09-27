@@ -56,7 +56,7 @@
      ：last-child 最后
      :nth-child()选中第n个 如果直接写n就是0到无穷 2n（even）表示选中偶数位的元素 2n+1(odd)是奇数
 
-      以同类元素中进行排序
+      以同类元素中进行排序2 
      :first-of-type
      :last-of-type
      :nth-of-type()
@@ -460,9 +460,35 @@
       background-attachment: scroll 默认值 会移动
       fixed 背景固定不动
 
-      background集合
+      backgrounad集合
       size在position的后面用/隔开
       origin 在clip前
+
+
+9.27  (90)背景练习1
+      (91)背景练习2
+      a:link hover active
+
+      (92)雪碧图
+      background-position切换位置
+      1确定要使用的图标
+      2测量图标的大小
+      3根据测量结果创建一个元素
+      4将雪碧图设置为元素的背景图片
+      5设置一个偏移量以显示正确的图片
+
+      (93)线性渐变
+      通过渐变可以设置一些复杂的背景颜色，可以实现从一个颜色向其他颜色过渡的效果
+      渐变是图片，需要通过background-image来设置
+      线性渐变，颜色沿着一条直线发生变化   
+      background-image:linear-gradient()  red,yellow
+      background-image:linear-gradient(to right,red,yellow)
+      background-image:linear-gradient(45deg,red,yellow)
+      background-image:linear-gradient(red 50px,yellow)从50位置开始渐变
+
+      可以平铺的线性渐变   50到100渐变
+      background-image:repeating-linear-gradient(red 50px,yellow 100px)
+
 
 
 
