@@ -490,7 +490,19 @@
       background-image:repeating-linear-gradient(red 50px,yellow 100px)
 
 
-
+9.28  (94)径向渐变
+      放射性效果
+      background-image:redial-gradinent(大小 at位置，颜色，位置，颜色，位置)
+      100px,100px at 0,0 是一个100的圆心 圆心位置
+      大小
+      circle正圆
+      ellipse椭圆
+      closest-side近边
+      closest-corner近角
+      farthest-side远边
+      farthest-corner远角
+      位置
+      top right left center bottom
 
 
 
