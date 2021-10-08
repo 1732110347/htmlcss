@@ -506,9 +506,54 @@
 
 10.4  (95)电影卡片练习
 
+19.8  (96)表格的简介
+      table 表格
+      tr为一行
+      td为一个单元格
+      colspan="2"横向合并单元格
+      rowspan="2"纵向合并
 
 
+      (97)长表格
+      可以将表格分成三个部分 
+      头部 thead
+      主体 tbody
+      底部 tfoot
+      th代替头部
 
+      (98)表格的样式
+      border-spacing:指定边框之间的距离
+      border-collapse:collapse;设置边框合并
+
+      tr:nth-child(2n)选中偶数
+
+      如果表格中没有使用tbody而是直接使用tr
+      那么浏览器会自动创建一个tbody，并且全部放到tbody里
+      tr不是table的子元素
+
+      默认情况下元素在td是垂直居中的可以通过vertical-align:改
+
+      display:table-cell;将元素设置为单元格
+
+
+      (99)表单简介
+      form action 指定提交服务器地址
+      input
+      text 文本框    <input type="text" name="">name为输入
+      password 密码框
+      button 按钮
+      reset 重置按钮
+      submit 提交按钮 value 显示文字 
+      radio 单选按钮  checked默认选中 选择框，必须指定一个value属性，value属性最终会作为用户的填写值
+      checkbox 多选按钮 
+      
+      select 下拉列表
+      option 选项
+
+
+      (100)表单补充
+      color 选择颜色框
+      email 邮箱框
 
 
 
