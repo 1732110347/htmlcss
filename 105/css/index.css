@@ -1,0 +1,100 @@
+/* 主页 */
+
+
+/* 顶部导航条的容器 */
+.topbar-wrapper{
+width:100%;
+height: 40px;
+line-height: 40px;
+background-color: #333;
+
+
+}
+/* 设置超链接的颜色 */
+.topbar a{
+    font-size: 12px;
+    color: #b0b0b0;
+}
+/* 设置超链接移入效果 */
+.topbar a:hover{
+    color: #fff;
+}
+/* 设置中间分割线 */
+.topbar .line{
+color: #424242;
+margin: 0 8px;
+margin-top: -1px;
+}
+
+
+/* 设置左侧导航栏 */
+.service, .topbar li {
+    float: left;
+}
+/* 设置下载app的下拉 */
+.app .qrcode{
+    display: none;
+    width: 124px;
+    height: 148px;
+    line-height: 1px;
+    background-color: rgb(255, 255, 255);
+    box-shadow:0 0 10px rgba(0, 0, 0, .3);
+    text-align: center;
+    position: relative;
+    left: -30px;
+}
+.app:hover .qrcode,
+.app:hover .app::after{
+    display: block;
+}
+.app{
+    position: relative;
+}
+.app .qrcode img{
+    width: 90px;
+    margin: 17px 17px;
+}
+.app .qrcode span{
+    color: black;
+}
+/* 设置app的小三角 */
+ li:hover > .app::before {
+    width: 0;
+    height: 0;
+    content:'';
+    line-height: 1px;
+    position: absolute;
+border: 10px solid transparent;
+border-top: none;
+border-bottom-color: white;
+left: 0;
+right: 0;
+margin: auto;
+bottom: -12px;
+}
+/* 设置右导航栏 */
+.shop-cart, .user-info{
+    float: right;
+}
+
+.shop-cart{
+    margin-left: 26px;
+}
+
+/* 设置购物车的样式 */
+.shop-cart a{
+    width: 120px;
+    
+    background-color: #424242;
+    text-align: center;
+}
+
+.shop-cart:hover a{
+    background-color: #fff;
+    color: #FF6700;
+}
+
+.shop-cart i{
+margin-right: 2px;
+
+}
