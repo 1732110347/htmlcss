@@ -553,7 +553,12 @@
 
       (100)表单补充
       color 选择颜色框
-      email 邮箱框1
+      email 邮箱框
+
+      autocomplete=""off 关闭自动补全 没有历史
+      readonly 表达设置为只读，数据会提交
+      disabled 禁用 选取不了 不会提交
+      autofocus 表单项自动获取焦点
 
 
 
