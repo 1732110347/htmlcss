@@ -118,7 +118,7 @@
 .header {
     width: 80%;
     height: 100px;
-    background-color: #bfa;
+    /* background-color: #bfa; */
     margin: auto;
 }
 
@@ -163,7 +163,7 @@
 /* 设置导航条 */
 .header .nav{
   
-    background-color: #bfa;
+    /* background-color: #bfa; */
     height: 100px;
     line-height: 100px;
     padding-left: 58px;
@@ -187,7 +187,24 @@
 .all-goods{
     visibility: inherit;
 }
+.nav .goods-info{
+    overflow: hidden;
+   background-color: #fff;
+   
+   position: absolute;
+   width: 100%;
+   top: 100px;
+   left: 0;
+   transition: height 0.3s ;
+   }
+.nav li:hover ~ .goods-info,
+.goods-info:hover{
+height: 228px;
 
+box-shadow: 0 5 3px rgba(0, 0, 0, .2);
+border-top:1px solid rgb(224, 224, 224);
+background-color: red;
+}
 
 
 
