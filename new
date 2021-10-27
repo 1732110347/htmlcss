@@ -1,2 +1,6 @@
 text-indent:2em 首行缩进2个字符
 
+ul li::marker{
+    font-size
+    content:""替换点
+}
