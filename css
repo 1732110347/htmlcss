@@ -607,14 +607,29 @@
       @变量名
       @a:100px;
       @b:box;
-      .@(b){}
+      .@(b){} 作为类名
 
       名字相同的取最近
 
       width:100px;
       height:$width;
 
+11.5 (128)父元素和扩展
+      &就表示外层父元素
+      .p1:extend(.p2){} 拓展p2
+      .p1{.p2();} 直接扩展
 
+
+      (129)混合函数
+      .p1(@w){width:@w;}设置变量、
+      .p2{.p1(2px)}
+
+      color: average(red,black); 混合颜色
+      darken(red,10%);加深百分之颜色
+
+      (130)less补充
+      @import "xxxx"引入
+      less中的数值可以运算
 
 
 

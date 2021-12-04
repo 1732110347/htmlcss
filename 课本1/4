@@ -1,0 +1,348 @@
+
+
+
+
+3格式化文本与段落
+  &lt 小于号
+  &gt 大于号
+ &copy版权
+ &reg商标
+
+ b粗体
+ i斜体
+ u下划线
+ del删除线
+ sup上标
+ sub下标
+
+
+ ruby标记用它将需要注释或注音标的文字内容包围
+ rt标记这里面放置音标或注释，这个标记要跟在需要注释的文本后面
+ rp防备那些1不支持ruby标记的浏览器 主要放括号
+
+ blockquote该引用内容能够向右缩进5个英文字符
+
+ pre预格式化 保留空格等
+4列表 
+ ul无序
+ type
+    dics实心圆形
+    circle空心圆形
+    square实心正方形
+
+ menu菜单
+ dir目录
+ ol有序
+ type
+    1
+    A
+    a
+    I
+    i
+    value表示改变当前序号
+   start表示起始序号
+
+ dl定义
+ dt表示标题
+ dd表示列表中的元素的内容
+
+
+
+
+
+
+
+5超链接
+ title指向链接的提示信息
+ target指向打开的目标窗体
+    _self 在当前框架中打开链接
+    _blank在一个全新的空白窗口打开链接
+    _top在顶层框架打开链接 也可以理解为在根框架中打开
+    _parent 在当前框架的上一层打开链接
+    framename在指定的框架或浮动框架内打开链接
+
+    #书签名 同一页面
+    url#书签名 不同
+
+    iframe浮动框架
+6图像与多媒体文件
+ 不要加px
+ hspace="水平间距数值"
+ vspace="垂直间距数值"
+
+ shape               coords 
+    rect 矩形区域   x1,y1,x2,y2
+    circle  圆形    center-x y radius
+    poly  多边区域
+ a  img usemap="#映射图像名称"
+ map name="映射图像名称"
+    area shape="热区形状" coords="热区坐标" href="xx"
+ /map
+
+ 滚动文字
+ marquee
+    onMouseOver="this.stop()" 当光标移动到滚动文字时 暂停滚动
+    onMouseOver="this.start()" 移出 继续滚动
+    bgcolor="背景颜色"
+    loop="滚动次数"
+    direction="滚动方向"up down left right
+    behavior="滚动方式"scroll循环往复 slide一次就停止 alternate来回交替滚动
+    scrollmount="滚动速度不需要加px"
+    scrolldelay="延迟时间"
+
+ embed可以播放Midi、Mav、AIFF、SWF、AV、MP3、MOV、AVI
+ autostart 逻辑值 true为自动播放 false
+ loop 逻辑值 true循环
+ 
+7css基础
+ 伪类选择器
+ link 在未被访问前的样式
+ hover 鼠标悬停时的样式
+ active 鼠标点击与释放间的样式
+ visited 被访问后
+ first-letter 用于块 设置一个字符的样式
+ first-line 用于块 设置第一个行的样式表
+ first-child 设置第一个标记的样式
+ lang 设置具有lang属性的标记样式
+ <link rel="stylesheet" href="./zx.css"> 定义当前文档与被链接文档之间的关系
+
+8div span
+ display：
+   none 此元素不显示
+   inline 行内元素
+   block 块 
+   inline-block 行内块 
+   inherit 从父元素继承display
+9css样式   
+ font-style 
+  normal表示不使用斜体
+  italic 使用斜体
+  oblique 倾斜字体显示
+ 
+ font-variant字体变体
+  normal正常字体
+  small-caps表示使用小型的大写字母字体
+
+ font-weight 粗细
+  normal正常
+  bold 标准粗体
+  bolder 特粗
+  lighter 细体
+  整数
+
+ letter-spacing:字符间距
+ line-height 行距
+ text-indent：2em首行缩进两个
+ text-decoration字符装饰
+  none 无
+  underline加下划线
+  overline加上画线
+  line-through加删除线
+ text-transform英文大小写转换
+  capitalize 每第一个字母转大写
+  uppercase 转大写
+  lowercase小写
+
+  vertical-align
+   top 元素的顶部与行中最高元素顶端对齐
+   middle 放父元素中间
+   bottom元素顶部与行最低元素顶部对齐
+   text-top元素顶部和父元素字体的顶部对齐
+   text-bottom和底部
+      background-repeat :repeat(默认) repeat-x 沿着x轴重复 repeat-y y重复 no-repeat不重复 用来设置背景的重复方式 
+       background-attachment: scroll 默认值 会移动 fixed 背景固定不动
+      background-position top left right bottom center px px用来设置背景图片的位置
+
+
+ list-style-type:
+  dics实心圆形 
+  circle空心圆形 
+  square实心正方形
+  decimal 123
+  lower-roman 小写罗马数字
+  upper-roman 大写罗马数字
+  lower-alpha 小写字母
+  upper-alpha 大写字母
+  none 不使用
+
+ list-style-image: url("")
+
+ list-style-position:outside 默认值放在文本外  inside文本内
+
+ border 
+  dotted点状虚线
+  dashed虚线
+  solid实线
+  double 双线 width
+  groove 3d凹槽 color
+  ridge山脊 color
+  inset 沉入 color
+  outset 浮出 color
+
+
+
+10div+css页面布局
+       visibility用来设置元素的显示状态
+      visable默认值，元素在页面显示
+      hidden 元素在页面隐藏 不显示 但是依然占位
+
+11表格
+ table 
+  caption标记标题
+  tr建立表行
+  th居中加租 表头
+  td为一个单元格
+
+ bgcolor
+ cellpadding边沿与内容空白
+ cellspacing 单元格之间空白
+ frame 
+ rules
+
+ bordercolor表格边框颜色
+ bordercolorlight 左上 表格亮边框颜色
+ bordercolordark 右下 暗边框颜色
+
+ frame  边框
+   above 显示上边框
+   below 下
+   hsides 上下
+   vsides 左右 
+   lhs 左
+   rhs 右 
+   border 全部
+   void 不显示
+
+
+ rules 内部边框
+   all 显示所有
+   none 不 
+   rows 仅显示行边框
+   cols 仅显示列边框
+   groups 显示介于列间边框
+
+
+ cellspacing="边距 单元格之间距离"
+ cellpadding="间距 单元格内容与内部边框距离"
+
+ td rowspan="行数"单元格跨行合并
+ colspan="列数"
+
+
+12表单
+   表单标记属性
+   name name  表单名字
+   action url 提交表单时向xx处发送表单
+   method get、post 
+   enctype MIME_type 规定表单数据在发送到服务器之前应该如何编码
+
+
+    12.2定义域
+    利用fieldset标记可以设置一个领域
+    legend标记为fieldset标记定义域标题
+
+    12.3表单信息输入
+    text name定义input元素名称
+         maxlength 规定输入字段中字符的最大长度
+         size 定义输入字段的宽度 其值小于或等于最大长度
+         value 规定input元素的默认值
+         readonly 规定文本框中的内容只读，不能修改或编辑
+
+    password
+
+    checkbox复选框
+        checked预选
+        name和value都应该不同
+
+    radio单选按钮
+        name一样 value不一样
+
+    image 图像按钮
+        name 
+        src
+        width
+        height
+
+    submit提交按钮
+        name
+        value 
+        如果不设置value的值 初始值是提交查询按钮
+
+    reset重置按钮
+        name 
+        value 
+
+    button普通按钮
+        name 
+        value 
+        onclick事件代码 绑定事件代码、自定义函数或直接使用脚本代码
+
+    file 文件选择框
+
+    hidden隐藏框
+
+    12.4多行文本输入框
+    textarea
+        rows规定文本区内可见行数
+        cols规定文本区内可见宽度
+        wrap 值 如何换行
+            wrap包含一行要移动到右边才能看全部
+            virtual自动换行但在传输给服务器时 文本只在用户按下回车
+            physical自动换行并以这种形式传送给服务器
+            off不会换行
+
+    12.5下拉列表框
+    select 外框
+        name
+        size
+        multiple规定可选择多个选项
+
+
+    option 内选项
+        value
+        selected设置预选列表项
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

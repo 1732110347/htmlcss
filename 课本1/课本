@@ -1,0 +1,124 @@
+
+
+
+
+
+
+
+
+
+12表单
+    12.2定义域
+    利用fieldset标记可以设置一个领域
+    legend标记为fieldset标记定义域标题
+
+    12.3表单信息输入
+    text name定义input元素名称
+         maxlength 规定输入字段中字符的最大长度
+         size 定义输入字段的宽度 其值小于或等于最大长度
+         value 规定input元素的默认值
+         readonly 规定文本框中的内容只读，不能修改或编辑
+
+    password
+
+    checkbox复选框
+        checked预选
+        name和value都应该不同
+
+    radio单选按钮
+        name一样 value不一样
+
+    image 图像按钮
+        name 
+        src
+        width
+        height
+
+    submit提交按钮
+        name
+        value 
+        如果不设置value的值 初始值是提交查询按钮
+
+    reset重置按钮
+        name 
+        value 
+
+    button普通按钮
+        name 
+        value 
+        onclick事件代码 绑定事件代码、自定义函数或直接使用脚本代码
+
+    file 文件选择框
+
+    hidden隐藏框
+
+    12.4多行文本输入框
+    textarea
+        rows规定文本区内可见行数
+        cols规定文本区内可见宽度
+        wrap 值 如何换行
+            wrap包含一行要移动到右边才能看全部
+            virtual自动换行但在传输给服务器时 文本只在用户按下回车
+            physical自动换行并以这种形式传送给服务器
+            off不会换行
+
+    12.5下拉列表框
+    select 外框
+        name
+        size
+        multiple规定可选择多个选项
+
+
+    option 内选项
+        value
+        selected设置预选列表项
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
