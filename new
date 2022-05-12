@@ -32,16 +32,94 @@ ul li::marker{
     _top在顶层框架打开链接 也可以理解为在根框架中打开
     _parent 在当前框架的上一层打开链接
 
+ cursor: pointer;放在上面变成手
+
+display: flex;
+display: inline-flex;
+flex-direction属性决定主轴的方向（即项目的排列方向）。
+
+.container {
+  flex-direction: row | row-reverse | column | column-reverse;
+}
+
+align-items属性可以应用于所有的flex容器，它的作用是设置flex子项在每个flex行的交叉轴上的默认对齐方式。不同取值的效果如下所示：
+align-items: center;居中排列
+flex-start 顶部
+flex-end 底部
+stretch 铺满
+
+align-content 只适用多行的flex容器（也就是flex容器中的子项不止一行时该属性才有效果），它的作用是当flex容器在交叉轴上有多余的空间时，将子项作为一个整体（属性值为：flex-start、flex-end、center时）进行对齐。
+
+justfiy-content属性可应用于所有的flex容器，它的作用是设置flex子项（flex items）在主轴上的对齐方式。
+
+transform
+1.旋转rotate
+rotate：通过指定的角度参数对原元素指定一个效果。
+如果设置的值为正数表示顺时针旋转，如果设置的值为负数，则表示逆时针旋转。如：transform:rotate(30deg)；
 
 
 
+2.移动translate
+translate() 根据左(X轴)和顶部(Y轴)位置给定的参数，从当前元素位置移动。
+
+如：transform:translate(100px,20px):
+
+translateX
+通过给定一个X方向上的数目指定一个translation。只向x轴进行移动元素，同样其基点是元素中心点，也可以根据transform-origin改变基点位置
+transform:translateX(100px):
 
 
 
+translateY
+通过给定Y方向的数目指定一个translation。只向Y轴进行移动，基点在元素心点，可以通过transform-origin改变基点位置。
+transform:translateY(20px):
 
 
 
+3.缩放scale
+缩放scale和移动translate是有点相似的，也是有三种情况：下面我们具体来看看这三种情况具体使用方法：
+注意：默认值是1，它的值放大是比1大，缩小比1小。
+1、scale(x,y) 定义 2D 缩放转换，改变元素的宽度和高度。
 
+如：transform:scale(2,1.5);
+
+
+
+2、scaleX(n) 定义 2D 缩放转换，改变元素的宽度。
+
+如：transform:scaleX(2):
+
+
+
+3、scaleY(n) 定义 2D 缩放转换，改变元素的高度。
+
+如：transform:scaleY(2):
+
+
+
+4.扭曲skew
+1、skew(x-angle,y-angle) 定义 2D 倾斜转换，沿着 X 和 Y 轴。
+
+如：transform:skew(30deg,10deg);
+
+
+
+image
+
+2、skewX(angle) 定义 2D 倾斜转换，沿着 X 轴。
+
+如：transform:skewX(30deg);
+
+
+
+3、skewY(angle) 定义 2D 倾斜转换，沿着 Y 轴。
+
+如：transform:skewY(10deg);
+
+
+
+matrix(, , , , , ) ： 以一个含六值的(a,b,c,d,e,f)变换矩阵的形式指定一个2D变换，相当于直接应用一个[a b c d e f]变换矩阵。就是基于水平方向（X轴）和垂直方向（Y轴）重新定位元素,此属性值使用涉及到数学中的矩阵。
+改变元素基点 tranform-origin
 
 
 

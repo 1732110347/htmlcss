@@ -631,5 +631,102 @@
       @import "xxxx"引入
       less中的数值可以运算
 
+131 弹性盒 flex
+ 可以根据页面变化
+ 弹性容器
+      要使用，必须选择一个元素设置为容器
+      display:flex 设置为块级弹性容器
+      display:inline-flex设置为行内
+
+ 弹性元素
+      子元素
+      一个元素可以同时是容器和元素
+
+ flex-direction 指定容器中元素的排列方式
+  可选值 
+  row默认 水平 
+  row-reverse 水平右向左
+  column 上向下
+  colun-reverse 下向上
+ 
+ 弹性元素属性
+  flex-grow 指定弹性盒的伸展系数
+  如果父元素有空闲时，0不伸展 按比例分配
+
+  flex-shrink 收缩系数
+  不足容纳所有，对子元素收缩
+  值越大收缩越多
+
+133 弹性容器样式
+ flex-wrap
+ 设置弹性元素是否在容器中换行
+ nowrap换默认值不换
+ wrap 元素沿这辅轴换行
+ wrap-reverse 辅轴反方向
+
+ flex-flow:direction和wrap简写属性
+
+ justify-content
+ 如何分配主轴上的空白空间
+ flex-start 元素沿着主轴起边排序
+ flex-end 元素沿终边排序
+ center 居中排列
+ space-around 空白分布到元素两边
+ space-evenly 空白分布到单侧
+ space-between 
+
+ align-items 辅轴上如何对齐
+ stretch 默认值 将元素的长度设置为相同的值
+ flex-start 元素不会拉伸，沿着辅轴起边对齐
+ flex-end 元素不会拉伸，沿着辅轴终边对齐
+ center 居中对齐
+ baseline 基线对齐
+
+ alingn-content 辅轴空白空间分布
+ flex-start 元素不会拉伸，沿着辅轴起边对齐
+ flex-end 元素不会拉伸，沿着辅轴终边对齐
+ center 居中对齐
+ space-around 空白分布到元素两边
+ space-evenly 空白分布到单侧
+ space-between 
+
+
+134 弹性元素
+ align-self 覆盖当前弹性元素的align-items
+ 
+  flex-grow 指定弹性盒的伸展系数
+  如果父元素有空闲时，0不伸展 按比例分配
+
+  flex-shrink 收缩系数
+  不足容纳所有，对子元素收缩
+  值越大收缩越多
+
+ flex-basis 元素在主轴的基础长度
+ 如果在横 指定元素宽度
+ 纵 高度
+ auto表示元素默认值
+
+ flex:1 1 auto 设置三个 增长 缩减 基础
+
+ order    决定元素的排列顺序
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

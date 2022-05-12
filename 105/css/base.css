@@ -1,7 +1,7 @@
 /* 公共样式 */
 
 .clearfix::before,
-.clearfix::after{
+.clearfix::after {
     content: '';
     display: table;
     clear: both;
@@ -11,25 +11,25 @@
 }
 
 /* 去除a的下划线 */
-a{
+a {
     text-decoration: none;
 }
 
-body{
-   font: 14px/1.5 Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
-color:#333;
-min-width: 1226px;
+body {
+    font: 14px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+    color: #333;
+    min-width: 1226px;
 }
 
 /* 设置一个类，用来表示中间容器的宽度 */
-.service  li{
+.service li {
 
-margin-left: 10px;
+    margin-left: 10px;
 
 }
 
-.user-info  li{
+.user-info li {
 
     margin-left: 10px;
-    
-    }
+
+}
